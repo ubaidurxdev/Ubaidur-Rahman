@@ -1,12 +1,13 @@
 import React from "react";
 import NavLink from "../NavLink/NavLink";
 import { ThemeToggleButton } from "@/components/ui/ThemeToggle";
+import Logo from "../Logo/Logo";
 const Navbar = () => {
   return (
     <header className="bg-transparent  sticky top-0 backdrop-blur-sm py-5 ">
       <div className="max-w-2xl mx-auto flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold">UR</h1>
+          <Logo/>
         </div>
         <div className="md:flex items-center hidden gap-4 ">
           <NavLink href="/">Portfolio</NavLink>
