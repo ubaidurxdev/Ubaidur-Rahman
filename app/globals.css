@@ -3,6 +3,8 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 @theme inline {
+  --color-text-color : #909092;
+  --color-main : #595959;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
