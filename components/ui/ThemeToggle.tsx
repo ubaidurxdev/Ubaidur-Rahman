@@ -7,7 +7,6 @@ import { Button } from "./button";
 import Moon from "../svgs/Moon";
 import Sun from "../svgs/Sun";
 
-
 export const useThemeToggle = ({
   variant = "circle",
   start = "center",
@@ -49,6 +48,14 @@ export const useThemeToggle = ({
   }, []);
 
   const toggleTheme = useCallback(() => {
+  try {
+    const audio = new Audio("/ThemeToggleSound.wav");
+    audio.play();
+  } catch (err) {
+    console.error("Sound error:", err);
+  }
+
+
     setIsDark(!isDark);
 
     const animation = createAnimation(variant, start, blur, gifUrl);
@@ -158,14 +165,14 @@ export const ThemeToggleButton = ({
       variant="ghost"
       size="icon"
       className={cn(
-        "size-10 cursor-pointer  p-0 transition-all duration-300 active:scale-95",
+        "size-12 cursor-pointer border-2  p-0 transition-all duration-300 active:scale-95",
         className
       )}
       onClick={toggleTheme}
       aria-label="Toggle theme"
     >
       <span className="sr-only">Toggle theme</span>
-      {isDark ? <Moon className="size-4" /> : <Sun className="size-4" />}
+      {!isDark ? <Moon className="size-4 " /> : <Sun className="size-4 " />}
     </Button>
   );
 };
