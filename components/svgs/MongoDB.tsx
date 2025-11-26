@@ -9,4 +9,4 @@ const MongoDB = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-export { MongoDB };
+export default MongoDB;

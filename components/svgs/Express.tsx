@@ -9,4 +9,4 @@ const Expressjs = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-export { Expressjs };
+export default Expressjs;

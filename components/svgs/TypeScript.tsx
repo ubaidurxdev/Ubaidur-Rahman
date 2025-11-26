@@ -13,4 +13,4 @@ const TypeScript = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-export { TypeScript };
+export default TypeScript;
