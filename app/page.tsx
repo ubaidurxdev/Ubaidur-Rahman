@@ -4,7 +4,6 @@ import React from "@/components/svgs/React";
 import TypeScript from "@/components/svgs/TypeScript";
 import Nextjs from "@/components/svgs/Next";
 import Nodejs from "@/components/svgs/Node";
-import { Button } from "@/components/ui/button";
 import { Newspaper, Send } from "lucide-react";
 import Link from "next/link";
 import PostgreSQL from "@/components/svgs/PostgreSql";

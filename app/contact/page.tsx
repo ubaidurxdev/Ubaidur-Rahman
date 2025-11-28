@@ -1,8 +1,46 @@
+"use client";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Send } from "lucide-react";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
+type FormData = {
+  name: string;
+  subject: string;
+  email: string;
+  message: string;
+};
+const Page = () => {
+  const [data, setData] = useState<FormData>({
+    name: "",
+    subject: "",
+    email: "",
+    message: "",
+  });
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
 
-const page = () => {
+    try {
+      const result = await emailjs.send(
+        "service_6vaff75", // replace with your service ID
+        "template_9b6eds3", // replace with your template ID
+        {
+          name: data.name,
+          subject: data.subject,
+          email: data.email,
+          message: data.message,
+        },
+        "CAZi6TZlvHaC_vc5M" // replace with your public key
+      );
+
+      console.log("Email sent:", result.text);
+      alert("Message sent successfully!");
+      setData({ name: "", subject: "", email: "", message: "" });
+    } catch (error) {
+      console.error("EmailJS error:", error.message);
+      alert("Failed to send message. Please try again.");
+    }
+  };
   return (
     <div>
       <div className="pb-5 border-b-2">
@@ -22,32 +60,56 @@ const page = () => {
           possible.
         </p>
       </div>
-      <form className="mt-8 space-y-4">
+      <form onSubmit={handleSubmit} className="mt-8 space-y-4">
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-7">
           <div className="flex flex-col gap-2 flex-1">
             <label htmlFor="name" className="text-sm font-medium">
               Name *
             </label>
-            <Input type="text" placeholder="Your full name" id="name" />
+            <Input
+              type="text"
+              value={data.name}
+              required
+              onChange={(e) => setData({ ...data, name: e.target.value })}
+              placeholder="Your full name"
+              id="name"
+            />
           </div>
           <div className="flex flex-col gap-2 flex-1">
-            <label htmlFor="number" className="text-sm font-medium ">
-              Phone *
+            <label htmlFor="subject" className="text-sm font-medium ">
+              Subject *
             </label>
-            <Input type="number" placeholder="Enter your phone" id="number" />
+            <Input
+              type="text"
+              value={data.subject}
+              required
+              onChange={(e) => setData({ ...data, subject: e.target.value })}
+              placeholder="Enter your email subject"
+              id="subject"
+            />
           </div>
         </div>
         <div className="flex flex-col gap-2">
           <label htmlFor="email" className="text-sm font-medium ">
             Email *
           </label>
-          <Input type="email" placeholder="Enter your email" id="email" />
+          <Input
+            type="email"
+            value={data.email}
+            required
+            onChange={(e) => setData({ ...data, email: e.target.value })}
+            placeholder="Enter your email"
+            id="email"
+          />
         </div>
         <div className="flex flex-col gap-2">
           <label htmlFor="message" className="text-sm font-medium ">
             Message *
           </label>
           <Textarea
+            value={data.message}
+            required
+            onChange={(e) => setData({ ...data, message: e.target.value })}
             placeholder="Type your message here."
             className="resize-none w-full h-32"
             id="message"
@@ -61,4 +123,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
