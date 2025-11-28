@@ -7,6 +7,7 @@ import Nodejs from "@/components/svgs/Node";
 import { Newspaper, Send } from "lucide-react";
 import Link from "next/link";
 import PostgreSQL from "@/components/svgs/PostgreSql";
+import SocialIcons from "./components/socialIcons/SocialIcons";
 interface TechStack {
   name: string;
   doc: string;
@@ -83,6 +84,7 @@ export default function Home() {
           <Send size={18} /> Get in touch
         </Link>
       </div>
+      <SocialIcons/>
     </div>
   );
 }
