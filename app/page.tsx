@@ -9,6 +9,7 @@ import Link from "next/link";
 import PostgreSQL from "@/components/svgs/PostgreSql";
 import SocialIcons from "./components/socialIcons/SocialIcons";
 import Projects from "./components/projects/Projects";
+import AboutMe from "./components/aboutme/AboutMe";
 interface TechStack {
   name: string;
   doc: string;
@@ -87,6 +88,7 @@ export default function Home() {
       </div>
       <SocialIcons />
       <Projects/>
+      <AboutMe/>
     </div>
   );
 }

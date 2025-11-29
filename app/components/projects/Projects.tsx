@@ -328,7 +328,7 @@ const Projects = () => {
   return (
     <div className="mt-16">
       <Title text="Projects" />
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-14">
         {allProjects.map((project, idx) => (
           <motion.div
             initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
