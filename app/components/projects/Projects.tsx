@@ -1,8 +1,16 @@
+"use client";
 import React from "react";
-import careerCrafter from "/careerCrafter.png";
-import recipe from "/recipe.png";
-import Jobent from "/jobent.png";
-import devdit from "/devdit.png";
+import Title from "../shared/Title";
+import Image from "next/image";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { TbWorld } from "react-icons/tb";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa6";
 export interface ProjectStatus {
   id: number;
   name: string;
@@ -16,6 +24,7 @@ export interface Project {
   teamProject: boolean;
   description: string;
   features: string[];
+  shortDescription: string;
   techStack: string[];
   status: ProjectStatus[];
   keyChallenges: string[];
@@ -25,12 +34,14 @@ export interface Project {
   serverLink?: string;
 }
 const Projects = () => {
-  const allProjects: Project = [
+  const allProjects: Project[] = [
     {
       id: 1,
-      img: careerCrafter,
+      img: "/careerCrafter.png",
       name: "Career Crafter",
       teamProject: true,
+      shortDescription:
+        "AI-powered platform to build resumes, enhance skills, and connect with professionals.",
       description:
         "Career Crafter is an AI-powered networking platform that helps users find jobs, build resumes, create CVs, enhance skills, and connect with professionals through smart, personalized recommendations.",
       features: [
@@ -62,26 +73,10 @@ const Projects = () => {
         "Firebase",
       ],
       status: [
-        {
-          id: 1,
-          name: "Timeline",
-          duration: "2 months",
-        },
-        {
-          id: 2,
-          name: "Role",
-          duration: "Full Stack",
-        },
-        {
-          id: 3,
-          name: "Team",
-          duration: "5 members",
-        },
-        {
-          id: 4,
-          name: "Status",
-          duration: "Completed",
-        },
+        { id: 1, name: "Timeline", duration: "2 months" },
+        { id: 2, name: "Role", duration: "Full Stack" },
+        { id: 3, name: "Team", duration: "5 members" },
+        { id: 4, name: "Status", duration: "Completed" },
       ],
       keyChallenges: [
         "Integrating multiple AI features like resume builder, skill gap analysis, and mock interviews",
@@ -118,9 +113,11 @@ const Projects = () => {
     },
     {
       id: 2,
-      img: devdit,
+      img: "/devdit.png",
       name: "Devdit",
       teamProject: false,
+      shortDescription:
+        "Interactive developer forum app with discussions, voting, dashboards, and analytics.",
       description:
         "Devdit is a dynamic single-page web app that lets users create, discover, and engage in discussions on a variety of topics. It helps people share knowledge and stay connected with community conversations.",
       features: [
@@ -152,6 +149,12 @@ const Projects = () => {
         "Axios JS",
         "Firebase",
       ],
+      status: [
+        { id: 1, name: "Timeline", duration: "10 days" },
+        { id: 2, name: "Role", duration: "Full Stack" },
+        { id: 3, name: "Team", duration: "Solo" },
+        { id: 4, name: "Status", duration: "Completed" },
+      ],
       keyChallenges: [
         "Implementing JWT auth with social login",
         "Securing Firebase and MongoDB with env variables",
@@ -167,28 +170,6 @@ const Projects = () => {
         "Ensuring reload-safe private routes",
         "Admin analytics with pie chart",
         "Dynamic tag creation from admin panel",
-      ],
-      status: [
-        {
-          id: 1,
-          name: "Timeline",
-          duration: "10 days",
-        },
-        {
-          id: 2,
-          name: "Role",
-          duration: "Full Stack",
-        },
-        {
-          id: 3,
-          name: "Team",
-          duration: "Solo",
-        },
-        {
-          id: 4,
-          name: "Status",
-          duration: "Completed",
-        },
       ],
       keyLearnings: [
         "Mastered MERN full-stack workflow",
@@ -211,9 +192,11 @@ const Projects = () => {
     },
     {
       id: 3,
-      img: Jobent,
+      img: "/jobent.png",
       name: "Jovent",
       teamProject: false,
+      shortDescription:
+        "Community platform for discovering, creating and join local social development events.",
       description:
         "Jobent is a community-driven platform for discovering, creating, and joining local social development events. It helps people connect with like-minded individuals while contributing to positive change in their communities.",
       features: [
@@ -243,17 +226,11 @@ const Projects = () => {
         "GSAP",
         "Framer Motion",
       ],
-      keyLearnings: [
-        "Implemented complete authentication flow using Firebase and JWT together",
-        "Gained deep understanding of private routing and token-based authorization",
-        "Enhanced backend skills by building search and filter APIs using MongoDB queries",
-        "Improved frontend state handling with protected pages and conditional rendering",
-        "Learned how to validate complex forms including password rules and event creation rules",
-        "Practiced working with future-only date selection using react-datepicker",
-        "Strengthened CRUD skills by developing event creation, editing, updating, and joining features",
-        "Improved UI/UX skills through theme toggling and responsive layout design",
-        "Gained experience managing user-specific data like joined events and created events",
-        "Learned proper deployment workflow for client and server using Firebase and Vercel",
+      status: [
+        { id: 1, name: "Timeline", duration: "7 days" },
+        { id: 2, name: "Role", duration: "Full Stack" },
+        { id: 3, name: "Team", duration: "Solo" },
+        { id: 4, name: "Status", duration: "Completed" },
       ],
       keyChallenges: [
         "Implementing backend-based search and filter logic using MongoDB queries",
@@ -267,27 +244,17 @@ const Projects = () => {
         "Preventing unauthorized updates or deletes to events not created by the user",
         "Deploying both server and client without CORS / 404 / 504 errors",
       ],
-      status: [
-        {
-          id: 1,
-          name: "Timeline",
-          duration: "7 days",
-        },
-        {
-          id: 2,
-          name: "Role",
-          duration: "Full Stack",
-        },
-        {
-          id: 3,
-          name: "Team",
-          duration: "Solo",
-        },
-        {
-          id: 4,
-          name: "Status",
-          duration: "Completed",
-        },
+      keyLearnings: [
+        "Implemented complete authentication flow using Firebase and JWT together",
+        "Gained deep understanding of private routing and token-based authorization",
+        "Enhanced backend skills by building search and filter APIs using MongoDB queries",
+        "Improved frontend state handling with protected pages and conditional rendering",
+        "Learned how to validate complex forms including password rules and event creation rules",
+        "Practiced working with future-only date selection using react-datepicker",
+        "Strengthened CRUD skills by developing event creation, editing, updating, and joining features",
+        "Improved UI/UX skills through theme toggling and responsive layout design",
+        "Gained experience managing user-specific data like joined events and created events",
+        "Learned proper deployment workflow for client and server using Firebase and Vercel",
       ],
       liveLink: "https://social-development-by-ubaid.netlify.app",
       clientLink: "https://github.com/noob-ubaid/Social-Development",
@@ -295,9 +262,11 @@ const Projects = () => {
     },
     {
       id: 4,
-      img: recipe,
+      img: "/recipe.png",
       name: "Recipe Book",
       teamProject: false,
+      shortDescription:
+        "Food platform to discover, share, and manage recipes with community features.",
       description:
         "Recipe Book is a trusted platform for food enthusiasts to discover, learn, and share recipes with a vibrant community. Whether you're a beginner or a passionate home chef, Recipe Book is the perfect place to connect and inspire.",
       features: [
@@ -322,17 +291,11 @@ const Projects = () => {
         "Firebase",
         "Axios js",
       ],
-      keyLearnings: [
-        "Implemented full authentication system using email/password and Google login",
-        "Learned to manage protected routes and persist login on reload",
-        "Built CRUD operations for recipes including create, update, and delete",
-        "Improved backend skills using MongoDB sorting, limiting, and filtering",
-        "Handled form validation for passwords and recipe form fields",
-        "Designed a dynamic top recipes section based on like count",
-        "Enhanced UI/UX experience with custom sliders, modals, and custom toasts",
-        "Worked with advanced UI libraries like Lottie, React Tooltip, and Awesome Reveal",
-        "Gained experience with theme toggling between dark and light modes",
-        "Learned to structure responsive layouts across mobile, tablet, and desktop",
+      status: [
+        { id: 1, name: "Timeline", duration: "5 days" },
+        { id: 2, name: "Role", duration: "Full Stack" },
+        { id: 3, name: "Team", duration: "Solo" },
+        { id: 4, name: "Status", duration: "Completed" },
       ],
       keyChallenges: [
         "Implementing like button logic where users cannot like their own recipes",
@@ -346,36 +309,88 @@ const Projects = () => {
         "Maintaining responsive card grids for All Recipes and Top Recipes sections",
         "Avoiding lorem text and designing unique, visually appealing UI components",
       ],
-      status: [
-        {
-          id: 1,
-          name: "Timeline",
-          duration: "5 days",
-        },
-        {
-          id: 2,
-          name: "Role",
-          duration: "Full Stack",
-        },
-        {
-          id: 3,
-          name: "Team",
-          duration: "Solo",
-        },
-        {
-          id: 4,
-          name: "Status",
-          duration: "Completed",
-        },
+      keyLearnings: [
+        "Implemented full authentication system using email/password and Google login",
+        "Learned to manage protected routes and persist login on reload",
+        "Built CRUD operations for recipes including create, update, and delete",
+        "Improved backend skills using MongoDB sorting, limiting, and filtering",
+        "Handled form validation for passwords and recipe form fields",
+        "Designed a dynamic top recipes section based on like count",
+        "Enhanced UI/UX experience with custom sliders, modals, and custom toasts",
+        "Worked with advanced UI libraries like Lottie, React Tooltip, and Awesome Reveal",
+        "Gained experience with theme toggling between dark and light modes",
+        "Learned to structure responsive layouts across mobile, tablet, and desktop",
       ],
       liveLink: "https://recipe-book-by-ubaid.netlify.app",
       clientLink: "https://github.com/noob-ubaid/Recipe-app",
       serverLink: "https://github.com/noob-ubaid/Recipe-book-server",
     },
   ];
-  return <div>
-  <h4 className="text-4xl fo">Projects</h4>
-  </div>;
+  return (
+    <div className="mt-16">
+      <Title text="Projects" />
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
+        {allProjects.map((project, idx) => (
+          <motion.div
+            initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
+            whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+            transition={{
+              duration: 0.3,
+              delay: idx * 0.1,
+              ease: "easeInOut",
+            }}
+            viewport={{ once: true }}
+            key={project.id}
+            className="shadow-md border-2 rounded-xl"
+          >
+            <div className="relative w-full h-56 border-b-2 ">
+              <Image
+                src={project.img}
+                alt={project.name}
+                fill
+                className="object-cover bg-center rounded-t-xl"
+              />
+            </div>
+            <div className="p-3 mt-2">
+              <div className="flex items-center justify-between gap-4">
+                <p className="font-medium text-2xl">{project.name}</p>
+                <div>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <a
+                        href={project.liveLink}
+                        className="text-text-color"
+                        target="_blank"
+                      >
+                        <TbWorld size={25} />
+                      </a>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p className="font-medium text-xs ">View website</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </div>
+              </div>
+              <p className=" text-text-color mt-3 text-[15px] font-medium tracking-normal leading-[26px]">
+                {project.shortDescription}
+              </p>
+              <div className="flex items-center justify-between gap-4 mt-3">
+                <p className="text-green-600 bg-green-100 py-1 px-2 rounded-sm text-xs">
+                  All features operational
+                </p>
+                <Link
+                  href={"/"}
+                  className="text-sm text-text-color font-medium hover:underline flex items-center gap-2"
+                >
+                  View Details <FaArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Projects;

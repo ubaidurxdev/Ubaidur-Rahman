@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { resumeConfig } from "../config/resume";
+import Title from "../components/shared/Title";
 
 export const metadata: Metadata = {
   title: "Resume | Md. Ubaidur Rahman",
@@ -22,9 +23,7 @@ export default function ResumePage() {
     <div className="pb-14">
       {/* Title */}
       <div className="border-b-2 pb-5 text-center">
-        <h1 className="text-3xl md:text-4xl text-center font-semibold">
-          Resume of Md. Ubaidur Rahman
-        </h1>
+        <Title text="Resume of Md. Ubaidur Rahman" />
       </div>
       {/* Embedded Resume */}
       <div className="mt-8">

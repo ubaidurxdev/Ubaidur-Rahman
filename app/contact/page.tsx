@@ -4,6 +4,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Send } from "lucide-react";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import Title from "../components/shared/Title";
 type FormData = {
   name: string;
   subject: string;
@@ -24,9 +25,7 @@ const Page = () => {
   return (
     <div>
       <div className="pb-5 border-b-2">
-        <h4 className="text-3xl md:text-4xl font-semibold text-center">
-          Contact Me
-        </h4>
+        <Title text="Contact Me"/>
         <p className=" text-center text-text-color mt-6">
           Don’t hesitate to get in touch—whether it’s a new project idea or a
           collaboration invite. I’m eager to connect and typically respond

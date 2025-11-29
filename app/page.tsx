@@ -8,6 +8,7 @@ import { Newspaper, Send } from "lucide-react";
 import Link from "next/link";
 import PostgreSQL from "@/components/svgs/PostgreSql";
 import SocialIcons from "./components/socialIcons/SocialIcons";
+import Projects from "./components/projects/Projects";
 interface TechStack {
   name: string;
   doc: string;
@@ -85,6 +86,7 @@ export default function Home() {
         </Link>
       </div>
       <SocialIcons />
+      <Projects/>
     </div>
   );
 }
