@@ -176,9 +176,6 @@ export default function GithubActivity() {
                 fontSize={githubConfig.fontSize}
                 colorScheme={theme === "dark" ? "dark" : "light"}
                 maxLevel={githubConfig.maxLevel}
-                hideTotalCount={true}
-                hideColorLegend={false}
-                hideMonthLabels={false}
                 theme={githubConfig.theme}
                 labels={{
                   months: githubConfig.months,
