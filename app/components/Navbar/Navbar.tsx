@@ -34,6 +34,11 @@ const Navbar = () => {
       label: "Snippets",
       href: "/snippets",
     },
+    {
+      id: 4,
+      label: "Projects",
+      href: "/snippets",
+    },
   ];
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -50,8 +55,8 @@ const Navbar = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="bg-transparent sticky top-0 backdrop-blur-sm py-5 px-4 sm:px-0 z-50">
-      <div className="max-w-2xl mx-auto flex items-center justify-between">
+    <header className="bg-transparent sticky top-0 backdrop-blur-sm  z-50">
+      <div className="max-w-2xl mx-auto flex py-5 px-4 sm:px-0 items-center justify-between">
         <div>
           <Logo />
         </div>
