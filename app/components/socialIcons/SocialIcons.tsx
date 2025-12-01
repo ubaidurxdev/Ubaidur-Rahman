@@ -6,6 +6,7 @@ import {
 import { div } from "framer-motion/client";
 import React from "react";
 import {
+  FaDiscord,
   FaFacebookSquare,
   FaGithub,
   FaLinkedin,
@@ -37,6 +38,12 @@ const SocialIcons = () => {
       name: "Facebook",
       url: "https://www.facebook.com/ubaidur.rahman.881781?rdid=KvGRqC7VQ5zQm27c&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1FXDbMmv5i%2F#",
       icon: FaFacebookSquare,
+    },
+    {
+      id: 5,
+      name: "Discord",
+      url: "https://discord.com/users/9jm6f99C",
+      icon: FaDiscord,
     },
   ];
   return (
