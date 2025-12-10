@@ -1,6 +1,7 @@
 import GithubActivity from "../github/GithubActivity";
 import Title from "../shared/Title";
 import Image from "next/image";
+import Skills from "../techStack/Skills";
 const AboutMe = () => {
   return (
     <div className="">
@@ -23,6 +24,7 @@ const AboutMe = () => {
             user-friendly digital experiences.
           </p>
           <p className="font-semibold text-text-color">Skills</p>
+          <Skills/>
         </div>
       </div>
       <GithubActivity/>

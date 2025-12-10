@@ -72,17 +72,17 @@ export function ExperiencePositionItem({ project }: { project: Project }) {
             </h4>
 
             <div className="flex items-center gap-2">
-               <Tooltip>
-              <TooltipTrigger asChild>
-                <a href={project.liveLink} target="_blank">
-                  {" "}
-                  <TbWorld className="text-muted-foreground" size={20} />
-                </a>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p className="font-medium text-xs">Live Link</p>
-              </TooltipContent>
-            </Tooltip>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <a href={project.liveLink} target="_blank">
+                    {" "}
+                    <TbWorld className="text-muted-foreground" size={20} />
+                  </a>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p className="font-medium text-xs">Live Link</p>
+                </TooltipContent>
+              </Tooltip>
               <div className="shrink-0 text-muted-foreground [&_svg]:size-4">
                 <ChevronsDownUpIcon className="hidden group-data-[state=open]/experience:block" />
                 <ChevronsUpDownIcon className="hidden group-data-[state=closed]/experience:block" />
@@ -123,11 +123,11 @@ export function ExperiencePositionItem({ project }: { project: Project }) {
             ))}
           </ul>
           <div className="pl-9 mt-4 flex items-center justify-between gap-4">
-            <p className="text-green-500 bg-green-100 px-2 py-1 rounded-md text-xs">
+            <p className="text-green-500 dark:bg-green-800 bg-green-100 px-2 py-1 rounded-md text-xs">
               All features operational
             </p>
             <Link
-              className=" hover:underline duration-200 text-text-color hover:text-black transition-colors flex items-center  gap-1 w-fit"
+              className=" hover:underline duration-200 text-text-color flex items-center  gap-1 w-fit"
               href={`project/${project.name
                 .toLowerCase()
                 .replace(/\s+/g, "-")}`}

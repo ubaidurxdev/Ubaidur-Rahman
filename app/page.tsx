@@ -1,4 +1,3 @@
-import Image from "next/image";
 import TechButton from "./components/TechButton/TechButton";
 import React from "@/components/svgs/React";
 import TypeScript from "@/components/svgs/TypeScript";
@@ -36,15 +35,8 @@ const postgreSql: TechStack = {
 };
 export default function Home() {
   return (
-    <div className="mt-4">
-      {/* <Image
-        src="/profile.jpg"
-        alt="image"
-        width={100}
-        height={60}
-        className="rounded-full"
-      /> */}
-      <p className="mt-8 font-semibold text-3xl">
+    <div className="">
+      <p className=" font-semibold text-3xl">
         Hi, I'm Ubaidur ——{" "}
         <span className="text-text-color">A Full Stack Developer </span>
       </p>

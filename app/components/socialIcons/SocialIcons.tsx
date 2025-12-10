@@ -3,8 +3,6 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { div } from "framer-motion/client";
-import React from "react";
 import {
   FaDiscord,
   FaFacebookSquare,
