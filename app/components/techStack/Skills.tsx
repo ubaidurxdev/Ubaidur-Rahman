@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { FaHtml5, FaCss3Alt, FaReact, FaNodeJs } from "react-icons/fa";
 import { SiJavascript, SiMongodb } from "react-icons/si";
 
@@ -17,37 +17,35 @@ export default function Skills() {
   const [hovered, setHovered] = useState(null);
 
   return (
-    <div className="flex items-start gap-1">
-      {skills.map((skill, index) => (
-        <motion.div
-          key={index}
-          layout
-          className="border p-1.5 rounded-full flex items-center justify-center cursor-pointer overflow-hidden"
-          initial={{ x: -10 }}
-          onMouseEnter={() => setHovered(index)}
-          onMouseLeave={() => setHovered(null)}
-          animate={{
-            opacity: hovered === index ? 1 : 0.85,
-          }}
-          transition={{ duration: 0.35, ease: "easeInOut" }} 
-        >
-          {skill.icon}
+    <div className="flex items-start gap-2">
+      {skills.map((skill, index) => {
+        const isHovered = hovered === index;
+        return (
+          <motion.div
+            key={index}
+            layout // enables smooth width animation
+            className="border p-1.5 rounded-full flex cursor-pointer overflow-hidden"
+            onMouseEnter={() => setHovered(index)}
+            onMouseLeave={() => setHovered(null)}
+            animate={{ opacity: isHovered ? 1 : 0.85 }}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+          >
+            <span className={isHovered ? "mr-1" : undefined}>{skill.icon}</span>
 
-          <AnimatePresence>
-            {hovered === index && (
-              <motion.span
-                className="ml-2 text-sm"
-                initial={{ opacity: 0, x: -4 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -4 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-              >
-                {skill.name}
-              </motion.span>
-            )}
-          </AnimatePresence>
-        </motion.div>
-      ))}
+            {/* Animate width using a motion.span wrapper */}
+            <motion.span
+              className=" text-sm font-medium whitespace-nowrap"
+              animate={{
+                width: isHovered ? "auto" : 0,
+                opacity: isHovered ? 1 : 0,
+              }}
+              transition={{ duration: 0.35, ease: "easeInOut" }}
+            >
+              {skill.name}
+            </motion.span>
+          </motion.div>
+        );
+      })}
     </div>
   );
 }
