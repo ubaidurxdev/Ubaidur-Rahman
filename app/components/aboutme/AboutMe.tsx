@@ -15,7 +15,7 @@ const AboutMe = () => {
             className="object-cover  bg-top rounded-md"
           />
         </div>
-        <div className="col-span-10 sm:col-span-6 space-y-6">
+        <div className="col-span-10 sm:col-span-6 space-y-5">
           <h4 className="text-3xl font-bold">Md. Ubaidur Rahman</h4>
           <p className="font-semibold text-text-color">
             I’m a passionate Full Stack Developer with a focus on building
