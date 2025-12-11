@@ -47,8 +47,7 @@ export default function Home() {
           icon={TypeScript}
           name={typeScript.name}
           href={typeScript.doc}
-        />
-        , <TechButton icon={Nextjs} name={next.name} href={next.doc} /> ,
+        /> , <TechButton icon={Nextjs} name={next.name} href={next.doc} /> ,
         <TechButton icon={Nodejs} name={node.name} href={node.doc} />, and{" "}
         <TechButton
           icon={PostgreSQL}
