@@ -1,21 +1,15 @@
 "use client";
 import { JSX, useState } from "react";
 import { motion } from "framer-motion";
-import ReactIcon from "@/components/svgs/React";
 import NextjsIcon from "@/components/svgs/Next";
-import TailwindCSS from "@/components/svgs/TailwindCss";
 import JavaScript from "@/components/svgs/JavaScript";
 import TypeScript from "@/components/svgs/TypeScript";
 import Redux from "@/components/svgs/Redux";
-import TanStack from "@/components/svgs/TanstackQuery";
-import ReactRouter from "@/components/svgs/ReactRouter";
 import React from "@/components/svgs/React";
-import Nodejs from "@/components/svgs/Node";
 import Expressjs from "@/components/svgs/Express";
 import MongoDB from "@/components/svgs/MongoDB";
 import PostgreSQL from "@/components/svgs/PostgreSql";
-import Firebase from "@/components/svgs/Firebase";
-import GitHub from "@/components/svgs/Github";
+
 
 type Skill = {
   name: string;
@@ -28,7 +22,6 @@ const skills: Skill[] = [
   { name: "React ", icon: <React className="size-5" /> },
   { name: "Next.js", icon: <NextjsIcon className="size-5" /> },
   { name: "Redux", icon: <Redux className="size-5" /> },
-  { name: "Node.js", icon: <Nodejs className="size-5" /> },
   { name: "Express.js", icon: <Expressjs className="size-5" /> },
   { name: "MongoDB", icon: <MongoDB className="size-5" /> },
   { name: "PostgreSQL", icon: <PostgreSQL className="size-5" /> },
@@ -38,7 +31,7 @@ export default function Skills() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <div className="flex items-center gap-1">
+    <div className="flex items-center gap-2">
       {skills.map((skill, index) => {
         const isHovered = hovered === index;
         return (
@@ -51,7 +44,7 @@ export default function Skills() {
             animate={{ opacity: isHovered ? 1 : 0.90 }}
             transition={{ duration: 0.35, ease: "easeInOut" }}
           >
-            <span className={isHovered ? "mr-2" : undefined}>{skill.icon}</span>
+            <span className={isHovered ? "mr-1" : undefined}>{skill.icon}</span>
 
             <motion.span
               initial={{ width: 0 }}
