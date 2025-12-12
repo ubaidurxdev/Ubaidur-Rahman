@@ -35,7 +35,7 @@ const postgreSql: TechStack = {
 };
 export default function Home() {
   return (
-    <div className="">
+    <div className="mt-14">
       <p className=" font-semibold text-3xl">
         Hi, I'm Ubaidur —{" "}
         <span className="text-text-color">A Full Stack Developer </span>
@@ -47,7 +47,8 @@ export default function Home() {
           icon={TypeScript}
           name={typeScript.name}
           href={typeScript.doc}
-        /> , <TechButton icon={Nextjs} name={next.name} href={next.doc} /> ,
+        />{" "}
+        , <TechButton icon={Nextjs} name={next.name} href={next.doc} /> ,
         <TechButton icon={Nodejs} name={node.name} href={node.doc} />, and{" "}
         <TechButton
           icon={PostgreSQL}
@@ -78,8 +79,8 @@ export default function Home() {
         </Link>
       </div>
       <SocialIcons />
-      <Projects/>
-      <AboutMe/>
+      <Projects />
+      <AboutMe />
     </div>
   );
 }

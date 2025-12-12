@@ -123,7 +123,7 @@ export default function GithubActivity() {
       <Title text={"Github Activity"} />
       <div>
         <div className="">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-[15px] text-muted-foreground">
             <b>ubaidur</b>&apos;s {githubConfig.subtitle}
           </p>
         </div>
