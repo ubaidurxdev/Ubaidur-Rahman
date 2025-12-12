@@ -56,7 +56,7 @@ const Navbar = () => {
 
   return (
     <header className="bg-transparent sticky top-0 backdrop-blur-sm  z-50">
-      <div className="max-w-2xl mx-auto flex py-5 px-4 sm:px-0 items-center justify-between">
+      <div className="max-w-[720px] mx-auto flex py-5 px-4 sm:px-0 items-center justify-between">
         <div>
           <Logo />
         </div>

@@ -6,7 +6,7 @@ const AboutMe = () => {
   return (
     <div className="">
       <Title text={"About Me"} />
-      <div className="grid grid-cols-10 mt-14 gap-6">
+      <div className="grid grid-cols-10 mt-14 gap-4">
         <div className="col-span-10 sm:col-span-4 relative w-full h-80 sm:h-72">
           <Image
             src={"/aboutme.jpg"}
@@ -23,7 +23,6 @@ const AboutMe = () => {
             real-world projects and continuously sharpening my skills to create
             user-friendly digital experiences.
           </p>
-          <p className="font-semibold text-text-color">Skills</p>
           <Skills/>
         </div>
       </div>
