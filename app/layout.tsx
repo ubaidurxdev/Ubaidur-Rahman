@@ -3,6 +3,7 @@ import { Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar/Navbar";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
+import Footer from "./components/Footer/Footer";
 
 const hankenGrotesk = Hanken_Grotesk({
   subsets: ["latin"],
@@ -28,17 +29,12 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <main className="max-w-[720px] mx-auto px-4 pb-6 sm:px-0">
+          <main className="max-w-[720px] mx-auto px-4  sm:px-0">
             {children}
+            <Footer/>
           </main>
         </ThemeProvider>
       </body>
     </html>
   );
 }
-
-
-
-
-
-

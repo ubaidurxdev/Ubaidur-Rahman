@@ -19,7 +19,7 @@ interface TechStack {
 
 const react: TechStack = {
   name: "React.js",
-  doc: "https://react.dev/",
+  doc: "https://react.dev",
 };
 const next: TechStack = {
   name: "Next.js",
@@ -27,7 +27,7 @@ const next: TechStack = {
 };
 const typeScript: TechStack = {
   name: "TypeScript",
-  doc: "https://www.typescriptlang.org/docs/",
+  doc: "https://www.typescriptlang.org/docs",
 };
 const node: TechStack = {
   name: "Node.js",
@@ -35,10 +35,9 @@ const node: TechStack = {
 };
 const postgreSql: TechStack = {
   name: "PostgreSql",
-  doc: "https://www.postgresql.org/docs/",
+  doc: "https://www.postgresql.org/docs",
 };
 
-// Variants for fade-up with stagger
 const containerVariants: Variants = {
   hidden: {},
   visible: {
