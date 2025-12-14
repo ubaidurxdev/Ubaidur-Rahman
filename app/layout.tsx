@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar/Navbar";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import Footer from "./components/Footer/Footer";
+import Quote from "./components/quote/Quote";
 
 const hankenGrotesk = Hanken_Grotesk({
   subsets: ["latin"],
@@ -31,6 +32,7 @@ export default function RootLayout({
           <Navbar />
           <main className="max-w-[720px] mx-auto px-4  sm:px-0">
             {children}
+            <Quote/>
             <Footer/>
           </main>
         </ThemeProvider>
