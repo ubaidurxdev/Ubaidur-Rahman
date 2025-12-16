@@ -4,8 +4,8 @@ import Facebook from "@/components/svgs/Facebook";
 import GitHub from "@/components/svgs/Github";
 import LinkedIn from "@/components/svgs/Linkedin";
 import XformerlyTwitter from "@/components/svgs/Twitter";
+import WhatsApp from "@/components/svgs/WhatsApp";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { useState } from "react";
 
 const SocialIcons = () => {
@@ -29,6 +29,12 @@ const SocialIcons = () => {
       name: "GitHub",
       url: "https://github.com/noob-ubaid",
       icon: <GitHub className="size-5 " />,
+    },
+    {
+      id: 6,
+      name: "WhatsApp",
+      url: "https://wa.me/8801735166610",
+      icon: <WhatsApp className="size-5" />,
     },
     {
       id: 4,
