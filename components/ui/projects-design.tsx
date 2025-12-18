@@ -49,8 +49,8 @@ export function ExperienceItem({
   return (
     <motion.div
       className="space-y-4 py-4"
-      initial={{ opacity: 0, y: 10 , filter: "blur(10px)"}}
-      whileInView={{ opacity: 1, y: 0,filter: "blur(0px)" }}
+      initial={{ opacity: 0, y: 10, filter: "blur(10px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.06 }}
     >
@@ -74,36 +74,54 @@ export function ExperiencePositionItem({ project }: { project: Project }) {
           )}
         >
           <div className="relative z-1 mb-1 flex items-center gap-3">
-            <div
-              className="flex size-6 shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground"
-              aria-hidden
-            >
+            {/* Icon */}
+            <div className="flex size-6 shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground">
               <ExperienceIcon className="size-4" />
             </div>
 
+            {/* Title */}
             <h4 className="flex-1 text-base font-medium text-foreground">
               {project.name}
             </h4>
 
-            <div className="flex items-center gap-2">
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <a href={project.liveLink} target="_blank">
-                    {" "}
-                    <TbWorld className="text-muted-foreground" size={20} />
-                  </a>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p className="font-medium text-xs">Live Link</p>
-                </TooltipContent>
-              </Tooltip>
-              <div className="shrink-0 text-muted-foreground [&_svg]:size-4">
-                <ChevronsDownUpIcon className="hidden group-data-[state=open]/experience:block" />
-                <ChevronsUpDownIcon className="hidden group-data-[state=closed]/experience:block" />
-              </div>
+            {/* View Details */}
+            <Link
+              href={`project/${project.name
+                .toLowerCase()
+                .replace(/\s+/g, "-")}`}
+              className="group flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              View details
+              <GoArrowRight
+                size={16}
+                className="transition-transform group-hover:translate-x-0.5"
+              />
+            </Link>
+
+            {/* Live link */}
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  className="rounded-md p-1.5 text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  <TbWorld size={18} />
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p className="text-xs font-medium">Live Link</p>
+              </TooltipContent>
+            </Tooltip>
+
+            {/* Expand icon */}
+            <div className="text-muted-foreground [&_svg]:size-4">
+              <ChevronsDownUpIcon className="hidden group-data-[state=open]/experience:block" />
+              <ChevronsUpDownIcon className="hidden group-data-[state=closed]/experience:block" />
             </div>
           </div>
 
+          {/* Meta */}
           <div className="relative z-1 flex items-center gap-3 pl-9 text-sm text-muted-foreground">
             <span className="font-medium pr-3 border-r-2">
               {project.projectType}
@@ -119,7 +137,6 @@ export function ExperiencePositionItem({ project }: { project: Project }) {
             <ReactMarkdown>{project.description}</ReactMarkdown>
           </Prose>
 
-          {/* Tech Stack */}
           <h3 className="pl-9 pt-3 font-semibold">Tech Stack</h3>
           <ul className="not-prose flex flex-wrap gap-1.5 pt-2 pl-9">
             {project.techStack.map((skill, index) => (
@@ -129,26 +146,17 @@ export function ExperiencePositionItem({ project }: { project: Project }) {
             ))}
           </ul>
 
-          {/* Features */}
           <h3 className="pl-9 pt-3 font-semibold">Features</h3>
           <ul className="list-disc pl-14 space-y-1 mt-3 text-sm text-muted-foreground">
             {project.features.map((feature, index) => (
               <li key={index}>{feature}</li>
             ))}
           </ul>
-          <div className="pl-9 mt-4 flex items-center justify-between gap-4">
-            <p className="text-green-500 dark:bg-green-800 bg-green-100 px-2 py-1 rounded-md text-xs">
+
+          <div className="pl-9 mt-4">
+            <p className="w-fit rounded-md bg-green-100 px-2 py-1 text-xs text-green-600 dark:bg-green-800">
               All features operational
             </p>
-            <Link
-              className=" hover:underline duration-200 text-text-color flex items-center  gap-1 w-fit"
-              href={`project/${project.name
-                .toLowerCase()
-                .replace(/\s+/g, "-")}`}
-            >
-              View Details
-              <GoArrowRight size={18} />
-            </Link>
           </div>
         </CollapsibleContent>
       </div>

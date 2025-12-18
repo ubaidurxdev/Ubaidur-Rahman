@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { motion, Variants, AnimatePresence } from "framer-motion";
 import GithubActivity from "../github/GithubActivity";
@@ -11,7 +10,7 @@ const containerVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.1,
     },
   },
 };
@@ -41,7 +40,7 @@ const modalVariants: Variants = {
   exit: {
     opacity: 0,
     scale: 0.95,
-    y: 30,
+    y: 0,
     transition: { duration: 0.3, ease: "easeIn" },
   },
 };
@@ -49,7 +48,6 @@ const modalVariants: Variants = {
 const AboutMe = () => {
   const [open, setOpen] = useState(false);
 
-  // Close modal on ESC key
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") setOpen(false);
