@@ -323,7 +323,7 @@ export const allProjects: Project[] = [
 const Projects = () => {
   return (
     <div>
-      <Title text="Projects"/>
+      <Title upperText="Featured" lowerText="Projects" />
       <WorkExperience experiences={allProjects} />
     </div>
   );

@@ -1,26 +1,59 @@
 "use client";
-import React, { ReactNode } from "react";
-import { Lora } from "next/font/google";
-import { motion } from "framer-motion";
-const lora = Lora({
-  subsets: ["latin"],
-  weight: ["700"],
-});
+import React from "react";
+import { motion,Variants } from "framer-motion";
+
 interface TitleProps {
-  text: ReactNode;
+  upperText: React.ReactNode;
+  lowerText: React.ReactNode;
 }
 
-const Title: React.FC<TitleProps> = ({ text }) => {
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants:Variants = {
+  hidden: {
+    opacity: 0,
+    y: 12,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.35,
+      ease: "easeOut",
+    },
+  },
+};
+
+const Title: React.FC<TitleProps> = ({ upperText, lowerText }) => {
   return (
-    <motion.h4
-      initial={{ opacity: 0, y: 12 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
       viewport={{ once: true }}
-      className={`text-3xl italic ${lora.className} text-center md:text-4xl mt-14 mb-8 font-medium `}
+      className="mt-16 "
     >
-      {text}
-    </motion.h4>
+      <motion.p
+        variants={itemVariants}
+        className="text-text-color font-medium"
+      >
+        {upperText}
+      </motion.p>
+
+      <motion.p
+        variants={itemVariants}
+        className=" text-2xl font-bold"
+      >
+        {lowerText}
+      </motion.p>
+    </motion.div>
   );
 };
 

@@ -31,7 +31,7 @@ export function WorkExperience({
   experiences: Project[];
 }) {
   return (
-    <div className={cn("bg-background", className)}>
+    <div className={cn("bg-background mt-6", className)}>
       {experiences.map((project, index) => (
         <ExperienceItem key={project.id} project={project} index={index} />
       ))}

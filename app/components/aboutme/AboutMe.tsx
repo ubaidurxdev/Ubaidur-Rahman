@@ -65,10 +65,10 @@ const AboutMe = () => {
         viewport={{ once: true, amount: 0.2 }}
       >
         <motion.div variants={itemVariants}>
-          <Title text={"About Me"} />
+          <Title upperText="About" lowerText="Me" />
         </motion.div>
 
-        <div className="grid grid-cols-10 mt-14 gap-6 sm:gap-4">
+        <div className="grid grid-cols-10 mt-8 gap-6 sm:gap-4">
           <motion.div
             className="col-span-10 sm:col-span-4 relative w-full h-80 sm:h-72"
             variants={itemVariants}
