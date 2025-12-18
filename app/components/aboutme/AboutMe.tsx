@@ -153,11 +153,15 @@ const AboutMe = () => {
               </div>
 
               <p className="text-sm leading-relaxed text-text-color">
-                My journey into web development started with curiosity and small
-                UI experiments. Over time, I transitioned from learning frontend
-                fundamentals to building complete MERN stack applications. I
-                focus on solving real problems, writing clean code, and learning
-                by building rather than relying solely on tutorials.
+                My development journey started with curiosity. When I was 14, I
+                searched on Google to understand how websites are made. That
+                made me more curious, so I went to YouTube and learned how
+                websites are developed. After completing my 10th exam, I decided
+                to learn web development seriously. I started with frontend
+                development and learned how to build user interfaces. After
+                that, I moved to full-stack development. Now, I am learning MERN
+                stack development in depth and improving my skills by building
+                real projects.
               </p>
             </motion.div>
           </motion.div>
