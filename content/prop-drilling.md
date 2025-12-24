@@ -4,7 +4,6 @@ description: Step into a spine-chilling narrative where React components face th
 date: 24 mar 2024
 tags: ["code", "react", "props"]
 slug: prop-drilling
-published: true
 ---
 
 # Prop Drilling: The Horror Movie
