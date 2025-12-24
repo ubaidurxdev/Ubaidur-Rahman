@@ -1,5 +1,7 @@
+"use client";
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
 export interface BlogPostMeta {
   title: string;
   description: string;
@@ -7,9 +9,15 @@ export interface BlogPostMeta {
   tags: string[];
   slug: string;
 }
-const BlogPosts = ({ post }: { post: BlogPostMeta }) => {
+const BlogPosts = ({ post, index }: { post: BlogPostMeta; index: number }) => {
   return (
-    <div className=" p-1 mt-3 rounded-md">
+    <motion.div
+      initial={{ opacity: 0, filter: "blur(10px)" }}
+      whileInView={{ opacity: 1, filter: "blur(0px)" }}
+      transition={{ duration: 0.2, delay: 0.05 * index }}
+      viewport={{ once: true }}
+      className="p-1 mt-3 rounded-md"
+    >
       <Link href={`/blogs/${post.slug}`}>
         <div className="flex sm:items-center flex-col mb-2 sm:flex-row gap-1 sm:justify-between">
           <h4 className="text-lg font-bold ">{post.title}</h4>
@@ -17,7 +25,7 @@ const BlogPosts = ({ post }: { post: BlogPostMeta }) => {
         </div>
         <p className="text-text-color mt-2">{post.description}</p>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 

@@ -24,7 +24,7 @@ const BlogsPage = () => {
       </div>
       <div className="mt-8">
         {blogs.map((post, index) => (
-          <BlogPosts key={index} post={post} />
+          <BlogPosts key={index} index={index} post={post} />
         ))}
       </div>
     </div>
