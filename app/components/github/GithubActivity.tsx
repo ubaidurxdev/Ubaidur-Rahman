@@ -157,12 +157,12 @@ export default function GithubActivity() {
         </div>
       ) : (
         <div className="relative overflow-hidden">
-          <div className="relative bg-background/50 flex items-center justify-center backdrop-blur-sm border-2 rounded-md p-3">
+          <div className="">
             <div className="w-full overflow-x-auto ">
               <ActivityCalendar
                 data={contributions}
-                blockSize={10}
-                blockMargin={3}
+                blockSize={10.73}
+                blockMargin={2.9}
                 fontSize={githubConfig.fontSize}
                 colorScheme={theme === "dark" ? "dark" : "light"}
                 maxLevel={githubConfig.maxLevel}

@@ -58,7 +58,7 @@ const OnThisPage = ({ htmlContent }: OnThisPageProps) => {
   };
 
   return (
-    <div className="on-this-page fixed top-32 lg:right-8 xl:right-20 2xl:right-32 hidden p-4 lg:block ">
+    <div className="on-this-page fixed top-32 lg:right-10 hidden p-4 lg:block ">
       <h2 className="text-md font-bold my-2">On This Page</h2>
 
       <ul className="text-sm space-y-1">
