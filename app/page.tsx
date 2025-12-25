@@ -11,6 +11,7 @@ import SocialIcons from "./components/socialIcons/SocialIcons";
 import Projects from "./components/projects/Projects";
 import AboutMe from "./components/aboutme/AboutMe";
 import { motion, Variants } from "framer-motion";
+import FeaturedBlogs from "./components/FeaturedBlogs/FeaturedBlogs";
 
 interface TechStack {
   name: string;
@@ -122,6 +123,7 @@ export default function Home() {
       <Projects />
 
       <AboutMe />
+      <FeaturedBlogs/>
     </motion.div>
   );
 }

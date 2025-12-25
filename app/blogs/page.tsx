@@ -6,7 +6,7 @@ import type { BlogPostMeta } from "../components/BlogPosts/BlogPosts";
 import BlogsHeader from "../components/BlogsHeader/BlogsHeader";
 
 const dirContent = fs.readdirSync("content", "utf-8");
-const blogs: BlogPostMeta[] = dirContent.map((file) => {
+export const blogs: BlogPostMeta[] = dirContent.map((file) => {
   const fileContent = fs.readFileSync(`content/${file}`, "utf-8");
   const { data } = matter(fileContent);
   return data as BlogPostMeta;

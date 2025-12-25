@@ -14,7 +14,7 @@ In the shadowy depths of a complex React application, a horror story unfolds. Co
 
 Our story begins in a seemingly ordinary app, where a deep nesting of components lives in harmony. But beneath the surface, a curse lurks: the curse of prop drilling. Props, those precious pieces of data, must traverse through an endless labyrinth of components, each more terrifying than the last.
 
-```jsx
+```jsx showLineNumbers
 const Grandparent = ({ terror }) => <Parent terror={terror} />;
 const Parent = ({ terror }) => <Child terror={terror} />;
 const Child = ({ terror }) => <div>{`The terror has arrived: ${terror}`}</div>;
@@ -28,7 +28,7 @@ As the props descend deeper into the component tree, strange things begin to hap
 
 Just when all hope seems lost, heroes emerge from the shadows: the Context API and Redux. With their powers of global state management, they offer a beacon of light in the dark, illuminating a path to safety for the beleaguered props.
 
-```jsx
+```jsx showLineNumbers
 const TerrorContext = React.createContext();
 const TerrorProvider = ({ children }) => {
   const [terror, setTerror] = useState("everywhere");
