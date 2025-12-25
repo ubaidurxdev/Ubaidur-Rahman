@@ -35,7 +35,7 @@ const modalVariants: Variants = {
     opacity: 1,
     scale: 1,
     y: 0,
-    transition: { duration: 0.4, ease: "easeOut" },
+    transition: { duration: 0.3, ease: "easeOut" },
   },
   exit: {
     opacity: 0,
@@ -129,7 +129,7 @@ const AboutMe = () => {
             initial="hidden"
             animate="visible"
             exit="hidden"
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
+            className="fixed inset-0 min-h-screen z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
             onClick={() => setOpen(false)}
           >
             <motion.div
@@ -148,7 +148,7 @@ const AboutMe = () => {
                   onClick={() => setOpen(false)}
                   className="text-lg font-bold text-text-color hover:opacity-70"
                 >
-                  ✕
+                  ✕ 
                 </button>
               </div>
 

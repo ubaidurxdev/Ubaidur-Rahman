@@ -20,10 +20,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-p-20 scroll-smooth" suppressHydrationWarning>
+    <html
+      lang="en"
+      className="scroll-p-20 scroll-smooth"
+      suppressHydrationWarning
+    >
       <body
         suppressHydrationWarning
-        className={`${hankenGrotesk.className} antialiased`}
+        className={`${hankenGrotesk.className} antialiased min-h-screen flex flex-col`}
       >
         <ThemeProvider
           attribute="class"
@@ -32,10 +36,12 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <main className="max-w-[720px] mx-auto px-4  sm:px-0">
+
+          <main className="grow max-w-[720px] mx-auto px-4 sm:px-0">
             {children}
-            <Footer />
           </main>
+
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

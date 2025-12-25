@@ -8,12 +8,10 @@ export default function FeaturedBlogs() {
   return (
     <section className="mt-10">
       <Title upperText="Featured" lowerText="Blogs" />
-      <div className="space-y-4">
-        <div className="mt-8">
-          {blogs.map((post, index) => (
-            <BlogPosts key={index} index={index} post={post} />
-          ))}
-        </div>
+      <div className="mt-8">
+        {blogs.map((post, index) => (
+          <BlogPosts key={index} index={index} post={post} />
+        ))}
       </div>
     </section>
   );

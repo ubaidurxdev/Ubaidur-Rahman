@@ -34,11 +34,6 @@ const Navbar = () => {
       label: "Snippets",
       href: "/snippets",
     },
-    {
-      id: 4,
-      label: "Projects",
-      href: "/snippets",
-    },
   ];
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -92,11 +87,11 @@ const Navbar = () => {
           <ThemeToggleButton variant="circle" start="top-right" blur />
 
           {/* Mobile Hamburger */}
-          <div className="sm:hidden relative" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            <button
-              
-              className="p-1 rounded-md  border-3 hover:bg-gray-200 dark:hover:bg-gray-700 transition"
-            >
+          <div
+            className="sm:hidden relative"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <button className="p-1 rounded-md  border-3 hover:bg-gray-200 dark:hover:bg-gray-700 transition">
               <motion.div
                 key={isMenuOpen ? "x" : "menu"}
                 initial={{ rotate: 0, opacity: 0 }}
