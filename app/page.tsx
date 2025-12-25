@@ -1,129 +1,15 @@
-"use client";
-import TechButton from "./components/TechButton/TechButton";
-import React from "@/components/svgs/React";
-import TypeScript from "@/components/svgs/TypeScript";
-import Nextjs from "@/components/svgs/Next";
-import Nodejs from "@/components/svgs/Node";
-import { Newspaper, Send } from "lucide-react";
-import Link from "next/link";
-import PostgreSQL from "@/components/svgs/PostgreSql";
-import SocialIcons from "./components/socialIcons/SocialIcons";
 import Projects from "./components/projects/Projects";
 import AboutMe from "./components/aboutme/AboutMe";
-import { motion, Variants } from "framer-motion";
 import FeaturedBlogs from "./components/FeaturedBlogs/FeaturedBlogs";
-
-interface TechStack {
-  name: string;
-  doc: string;
-}
-
-const react: TechStack = {
-  name: "React.js",
-  doc: "https://react.dev",
-};
-const next: TechStack = {
-  name: "Next.js",
-  doc: "https://nextjs.org/docs",
-};
-const typeScript: TechStack = {
-  name: "TypeScript",
-  doc: "https://www.typescriptlang.org/docs",
-};
-const node: TechStack = {
-  name: "Node.js",
-  doc: "https://nodejs.org/en",
-};
-const postgreSql: TechStack = {
-  name: "PostgreSql",
-  doc: "https://www.postgresql.org/docs",
-};
-
-const containerVariants: Variants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.07,
-    },
-  },
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 5 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut" } },
-};
+import Hero from "./components/Hero/Hero";
 
 export default function Home() {
   return (
-    <motion.div
-      className="mt-14 space-y-6"
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-    >
-      {/* Greeting */}
-      <motion.p className="font-semibold text-3xl" variants={itemVariants}>
-        Hi, I'm Ubaidur —{" "}
-        <span className="text-text-color">A Full Stack Developer </span>
-      </motion.p>
-
-      {/* Intro Paragraph */}
-      <motion.p
-        className="mt-6 text-lg text-text-color leading-9"
-        variants={itemVariants}
-      >
-        I specialize in building fast, modern, and scalable web applications
-        using <TechButton icon={React} name={react.name} href={react.doc} /> ,
-        <TechButton
-          icon={TypeScript}
-          name={typeScript.name}
-          href={typeScript.doc}
-        />{" "}
-        , <TechButton icon={Nextjs} name={next.name} href={next.doc} /> ,
-        <TechButton icon={Nodejs} name={node.name} href={node.doc} />, and{" "}
-        <TechButton
-          icon={PostgreSQL}
-          name={postgreSql.name}
-          href={postgreSql.doc}
-        />
-        . With a strong focus on clean{" "}
-        <span className="font-semibold text-black dark:text-white">UI</span> ,
-        user experience, and{" "}
-        <span className="font-semibold text-black dark:text-white">
-          performance
-        </span>
-        .
-      </motion.p>
-
-      {/* Buttons */}
-      <motion.div
-        className="mt-6 flex items-center gap-4 sm:gap-6"
-        variants={itemVariants}
-      >
-        <Link
-          href={"/resume"}
-          className="btn-design"
-        >
-          <Newspaper />
-          Resume
-        </Link>
-        <Link
-          href={"/contact"}
-          className=" px-7 flex items-center gap-2 py-2 rounded-md bg-black dark:bg-white dark:text-black text-white text-sm font-medium"
-        >
-          <Send size={18} /> Get in touch
-        </Link>
-      </motion.div>
-
-      <motion.div variants={itemVariants}>
-        <SocialIcons />
-      </motion.div>
-
+    <div className="mt-14 space-y-6">
+      <Hero/>
       <Projects />
-
       <AboutMe />
-      {/* <FeaturedBlogs/> */}
-    </motion.div>
+      <FeaturedBlogs />
+    </div>
   );
 }
