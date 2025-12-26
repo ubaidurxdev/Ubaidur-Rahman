@@ -10,7 +10,7 @@ const containerVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.07,
+      staggerChildren: 0.04,
     },
   },
 };
@@ -77,6 +77,7 @@ const AboutMe = () => {
               src={"/aboutme.jpg"}
               alt="profile"
               fill
+              blurDataURL="blur"
               className="object-cover bg-top rounded-md"
             />
           </motion.div>
@@ -148,7 +149,7 @@ const AboutMe = () => {
                   onClick={() => setOpen(false)}
                   className="text-lg font-bold text-text-color hover:opacity-70"
                 >
-                  ✕ 
+                  ✕
                 </button>
               </div>
 

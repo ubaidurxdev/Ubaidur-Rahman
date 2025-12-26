@@ -9,7 +9,7 @@ import Expressjs from "@/components/svgs/Express";
 import MongoDB from "@/components/svgs/MongoDB";
 import PostgreSQL from "@/components/svgs/PostgreSql";
 import Nodejs from "@/components/svgs/Node";
-import TailwindCSS from "@/components/svgs/TailwindCss";
+import Prisma from "@/components/svgs/Prisma";
 
 type Skill = {
   name: string;
@@ -19,7 +19,7 @@ type Skill = {
 const skills: Skill[] = [
   { name: "JavaScript", icon: <JavaScript className="size-4 sm:size-5" /> },
   { name: "TypeScript", icon: <TypeScript className="size-4 sm:size-5" /> },
-  { name: "Tailwind CSS", icon: <TailwindCSS className="size-4 sm:size-5" /> },
+  { name: "Prisma", icon: <Prisma className="size-4 sm:size-5" /> },
   { name: "React ", icon: <React className="size-4 sm:size-5" /> },
   { name: "Next.js", icon: <NextjsIcon className="size-4 sm:size-5" /> },
   { name: "Node.js", icon: <Nodejs className="size-4 sm:size-5" /> },
