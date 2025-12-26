@@ -43,7 +43,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
 
   const htmlContent = (await processor.process(content)).toString();
   return (
-    <main className="mt-14">
+    <main className="">
       <div className="mb-8">
         <OnThisPage htmlContent={htmlContent} />
         <Link className="btn-design" href={`/blogs`}>

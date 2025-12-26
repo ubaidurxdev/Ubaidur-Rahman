@@ -14,7 +14,7 @@ export const blogs: BlogPostMeta[] = dirContent.map((file) => {
 
 const BlogsPage = () => {
   return (
-    <div className="mt-14">
+    <div className="">
      <BlogsHeader/>
       <div className="mt-8">
         {blogs.map((post, index) => (

@@ -3,7 +3,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Send } from "lucide-react";
 import { useState } from "react";
-import Title from "../components/shared/Title";
 type FormData = {
   name: string;
   subject: string;
@@ -21,7 +20,7 @@ const Page = () => {
     e.preventDefault();
   };
   return (
-    <div className="mt-14">
+    <div className="">
        <h2 className="text-2xl sm:text-3xl font-bold text-center">Contact Me</h2>
       <div className="pb-5 border-b-2">
         <p className=" text-center text-text-color mt-6">

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import React from "react";
 import { RiArrowGoBackFill } from "react-icons/ri";
-import { TbBrandGithub, TbServer, TbWorld } from "react-icons/tb";
+import { TbBrandGithub, TbWorld } from "react-icons/tb";
 const Project = () => {
   const params = useParams();
   const { projectName } = params;
@@ -14,7 +14,7 @@ const Project = () => {
   );
   if (!project) return <p>Project not found</p>;
   return (
-    <div className="mt-14">
+    <div className="">
       <div className="">
         <Link href={"/"} className="btn-design">
           <RiArrowGoBackFill size={20} />
