@@ -12,6 +12,9 @@ const hankenGrotesk = Hanken_Grotesk({
 export const metadata: Metadata = {
   title: "Md. Ubaidur Rahman",
   description: "Portfolio of Md. Ubaidur Rahman",
+  icons: {
+    icon: '/logo.ico', 
+  },
 };
 
 export default function RootLayout({
@@ -47,3 +50,4 @@ export default function RootLayout({
     </html>
   );
 }
+
