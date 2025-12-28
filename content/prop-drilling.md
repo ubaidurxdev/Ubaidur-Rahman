@@ -1,7 +1,7 @@
 ---
 title: "Prop Drilling: The Horror Movie - A Tale of React Components"
 description: Step into a spine-chilling narrative where React components face the dread of prop drilling. Discover how using Context API or Redux can save your components from the depths of despair in this humorous take on a common React challenge.
-date: 24 mar 2024
+date: December 25, 2025
 tags: ["code", "react", "props"]
 slug: prop-drilling
 ---
