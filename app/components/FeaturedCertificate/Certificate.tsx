@@ -1,7 +1,17 @@
-import React from 'react';
-import Title from '../shared/Title';
+import React from "react";
+import Title from "../shared/Title";
+import { CertificatesList } from "@/components/ui/Certificate-design";
 
-const certificates = [
+interface Certificate {
+  id: number;
+  title: string;
+  description: string;
+  data: string;
+  skills: string[];
+  certificate: string;
+}
+
+const certificates: Certificate[] = [
   {
     id: 1,
     title: "Complete Web Development",
@@ -43,11 +53,12 @@ const certificates = [
 ];
 
 const Certificate = () => {
-    return (
-        <div>
-            <Title lowerText="Certificate" upperText="Featured"/>
-        </div>
-    );
+  return (
+    <div>
+      <Title lowerText="Certificate" upperText="Featured" />
+      <CertificatesList certificates={certificates} />
+    </div>
+  );
 };
 
 export default Certificate;
