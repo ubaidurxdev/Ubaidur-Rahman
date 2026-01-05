@@ -140,7 +140,7 @@ const Page = () => {
           className="w-full flex items-center justify-center mt-6 gap-2 py-2.5 rounded-md bg-black dark:bg-white dark:text-black text-white text-sm font-medium"
           variants={itemVariants}
         >
-          <Send size={18} /> Get in touch
+          <Send size={18} /> Send message
         </motion.button>
       </motion.form>
     </motion.div>
