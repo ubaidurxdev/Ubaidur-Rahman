@@ -18,15 +18,9 @@ const ActivityCalendar = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="relative h-[135px] overflow-hidden rounded-lg bg-muted">
+      <div className="relative h-[140.500px] overflow-hidden rounded-lg bg-muted">
         <div
-          className="absolute inset-0 -translate-x-full animate-shimmer 
-    bg-gradient-to-r 
-    from-transparent 
-    via-white/60 dark:via-white/10 
-    to-transparent
-    blur-sm
-  "
+          className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/60 dark:via-white/10 to-transparent blur-sm"
         />
       </div>
     ),
