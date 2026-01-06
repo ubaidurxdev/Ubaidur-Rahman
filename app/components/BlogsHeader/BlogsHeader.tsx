@@ -19,7 +19,7 @@ const fadeUpVariants: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.17,
+      duration: 0.25,
       ease: "easeOut",
     },
   },
