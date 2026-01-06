@@ -8,12 +8,12 @@ import Certificate from "./components/FeaturedCertificate/Certificate";
 export default function Home() {
   return (
     <div className=" space-y-6">
-      <Hero />
+      {/* <Hero />
       <Projects />
-      <AboutMe />
+      <AboutMe /> */}
       <GithubActivity />
-      <FeaturedBlogs />
-      <Certificate/>
+      {/* <FeaturedBlogs />
+      <Certificate/> */}
     </div>
   );
 }
