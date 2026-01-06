@@ -9,6 +9,7 @@ import PostgreSQL from "@/components/svgs/PostgreSql";
 import { motion, Variants } from "framer-motion";
 import TechButton from "../TechButton/TechButton";
 import SocialIcons from "../socialIcons/SocialIcons";
+import Expressjs from "@/components/svgs/Express";
 
 interface TechStack {
   name: string;
@@ -27,8 +28,8 @@ const typeScript: TechStack = {
   name: "TypeScript",
   doc: "https://www.typescriptlang.org/docs",
 };
-const node: TechStack = {
-  name: "Node.js",
+const express: TechStack = {
+  name: "Express.js",
   doc: "https://nodejs.org/en",
 };
 const postgreSql: TechStack = {
@@ -74,7 +75,8 @@ const Hero = () => {
           href={typeScript.doc}
         />{" "}
         , <TechButton icon={Nextjs} name={next.name} href={next.doc} /> ,
-        <TechButton icon={Nodejs} name={node.name} href={node.doc} />, and{" "}
+        <TechButton icon={Expressjs} name={express.name} href={express.doc} />,
+        and{" "}
         <TechButton
           icon={PostgreSQL}
           name={postgreSql.name}
