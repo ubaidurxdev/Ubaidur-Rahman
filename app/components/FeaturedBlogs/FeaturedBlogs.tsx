@@ -6,7 +6,7 @@ export default function FeaturedBlogs() {
   const blogs = getBlogs().slice(0, 3);
 
   return (
-    <section className="mt-10">
+    <section className="mt-12">
       <Title upperText="Featured" lowerText="Blogs" />
       <div className="mt-8">
         {blogs.map((post, index) => (

@@ -322,7 +322,7 @@ export const allProjects: Project[] = [
 ];
 const Projects = () => {
   return (
-    <div>
+    <div className="mt-12">
       <Title upperText="Featured" lowerText="Projects" />
       <WorkExperience experiences={allProjects} />
     </div>

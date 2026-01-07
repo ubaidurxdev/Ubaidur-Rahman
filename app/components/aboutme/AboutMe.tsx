@@ -56,7 +56,7 @@ const AboutMe = () => {
   }, []);
 
   return (
-    <>
+    <div className="mt-12">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -175,7 +175,7 @@ const AboutMe = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 };
 

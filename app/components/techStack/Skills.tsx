@@ -10,6 +10,7 @@ import MongoDB from "@/components/svgs/MongoDB";
 import PostgreSQL from "@/components/svgs/PostgreSql";
 import Nodejs from "@/components/svgs/Node";
 import Prisma from "@/components/svgs/Prisma";
+import Title from "../shared/Title";
 
 type Skill = {
   name: string;
@@ -32,10 +33,9 @@ export default function Skills() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <div>
-      <p className="font-semibold text-text-color">Core Skills</p>
-
-      <div className="flex items-center gap-0.5 sm:gap-1 mt-1">
+    <div className="mt-10">
+      <Title upperText="Tech" lowerText="Stack" />
+      <div className="flex items-center gap-0.5 sm:gap-1 mt-3">
         {skills.map((skill, index) => {
           const isHovered = hovered === index;
           return (

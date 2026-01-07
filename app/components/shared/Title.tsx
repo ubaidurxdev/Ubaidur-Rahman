@@ -38,7 +38,6 @@ const Title: React.FC<TitleProps> = ({ upperText, lowerText }) => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className="mt-16 "
     >
       <motion.p
         variants={itemVariants}

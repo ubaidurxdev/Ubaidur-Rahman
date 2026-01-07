@@ -140,7 +140,7 @@ export default function GithubActivity() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.2 }}
       viewport={{ once: true }}
-      className="space-y-3"
+      className="space-y-2 mt-10"
     >
       {/* Header */}
       <Title upperText="Featured" lowerText="Github Activity" />
