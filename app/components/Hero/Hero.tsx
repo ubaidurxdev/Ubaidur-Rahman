@@ -67,14 +67,14 @@ const Hero = () => {
         variants={itemVariants}
       >
         I specialize in building fast, modern, and scalable web applications
-        using <TechButton icon={React} name={react.name} href={react.doc} /> ,
+        using <TechButton icon={React} name={react.name} href={react.doc} /> ,{" "}
         <TechButton
           icon={TypeScript}
           name={typeScript.name}
           href={typeScript.doc}
         />{" "}
-        , <TechButton icon={Nextjs} name={next.name} href={next.doc} /> ,
-        <TechButton icon={Expressjs} name={express.name} href={express.doc} />,
+        , <TechButton icon={Nextjs} name={next.name} href={next.doc} /> ,{" "}
+        <TechButton icon={Expressjs} name={express.name} href={express.doc} /> ,
         and{" "}
         <TechButton
           icon={PostgreSQL}
