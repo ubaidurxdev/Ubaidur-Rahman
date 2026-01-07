@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import { motion, Variants, AnimatePresence } from "framer-motion";
 import Title from "../shared/Title";
 import Image from "next/image";
-
+import { GrLocation } from "react-icons/gr";
+import { MdCall } from "react-icons/md";
 const containerVariants: Variants = {
   hidden: {},
   visible: {
@@ -108,8 +109,22 @@ const AboutMe = () => {
             >
               How I started as a web developer →
             </motion.button>
-
-            
+            <motion.div variants={itemVariants}>
+              <div className="flex items-center gap-3">
+                <div className="p-[3px] rounded-md bg-gray-200/70 dark:bg-second-dark w-fit">
+                  <MdCall size={19} color="gray" />
+                </div>
+                <p className="text-text-color font-medium">+880 1735-166610</p>
+              </div>
+              <div className="flex  mt-2.5 items-center gap-3">
+                <div className="p-[3px] rounded-md bg-gray-200/70 dark:bg-second-dark w-fit">
+                  <GrLocation size={19} color="gray" />
+                </div>
+                <p className="text-text-color font-medium">
+                  Sylhet, Bangladesh
+                </p>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </motion.div>
