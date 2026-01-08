@@ -136,9 +136,9 @@ export default function GithubActivity() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.2 }}
+      initial={{ opacity: 0, scale:0.8 }}
+      whileInView={{ opacity: 1, scale:1 }}
+      transition={{ duration: 0.25 }}
       viewport={{ once: true }}
       className="space-y-2 mt-10"
     >

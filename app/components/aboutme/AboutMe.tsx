@@ -14,10 +14,10 @@ const containerVariants: Variants = {
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 10 },
+  hidden: { opacity: 0, scale: 0.8 },
   visible: {
     opacity: 1,
-    y: 0,
+    scale: 1,
     transition: { duration: 0.2, ease: "easeOut" },
   },
 };
@@ -28,7 +28,7 @@ const backdropVariants: Variants = {
 };
 
 const modalVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.95, y: 0 },
+  hidden: { opacity: 0, scale: 0.9, y: 0 },
   visible: {
     opacity: 1,
     scale: 1,
@@ -37,7 +37,7 @@ const modalVariants: Variants = {
   },
   exit: {
     opacity: 0,
-    scale: 0.95,
+    scale: 0.9,
     y: 0,
     transition: { duration: 0.3, ease: "easeIn" },
   },
@@ -109,7 +109,7 @@ const AboutMe = () => {
               How I started as a web developer →
             </motion.button>
             <motion.div variants={itemVariants}>
-              <Skills/>
+              <Skills />
             </motion.div>
           </motion.div>
         </div>

@@ -12,9 +12,9 @@ export interface BlogPostMeta {
 const BlogPosts = ({ post, index }: { post: BlogPostMeta; index: number }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, filter: "blur(10px)" }}
-      whileInView={{ opacity: 1, filter: "blur(0px)" }}
-      transition={{ duration: 0.32, delay: 0.065 * index }}
+      initial={{ opacity: 0, scale:0.8 }}
+      whileInView={{ opacity: 1, scale:1 }}
+      transition={{ duration: 0.25, delay: 0.065 * index }}
       viewport={{ once: true }}
       className="p-1 mt-5 rounded-md"
     >

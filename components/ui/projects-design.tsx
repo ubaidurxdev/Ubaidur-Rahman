@@ -49,8 +49,8 @@ export function ExperienceItem({
   return (
     <motion.div
       className="space-y-4 py-4"
-      initial={{ opacity: 0,  filter: "blur(10px)" }}
-      whileInView={{ opacity: 1, filter: "blur(0px)" }}
+      initial={{ opacity: 0,  scale:0.8 }}
+      whileInView={{ opacity: 1, scale:1 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.2, ease: "easeOut", delay: index * 0.05 }}
     >
