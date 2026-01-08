@@ -5,14 +5,16 @@ import { MdCall } from "react-icons/md";
 import Title from "../shared/Title";
 import { MdOutlineMail } from "react-icons/md";
 import { MdAccessTime } from "react-icons/md";
+import { CgGenderMale } from "react-icons/cg";
+import { BiWorld } from "react-icons/bi";
 const MoreAboutMe = () => {
-  const [time, setTime] = useState("00:00 AM");
+  const [time, setTime] = useState("00:00:00");
 
   useEffect(() => {
     const updateTime = () => {
       const bdTime = new Date().toLocaleTimeString("en-US", {
         timeZone: "Asia/Dhaka",
-        hour12: true,
+        hour12: false,
       });
       setTime(bdTime);
     };
@@ -39,18 +41,26 @@ const MoreAboutMe = () => {
       icon: <MdOutlineMail size={19} color="gray" />,
       text: "ubaidurrahman661@gmail.com",
     },
+    {
+      icon: <BiWorld size={19} color="gray" />,
+      text: "Full Stack Developer",
+    },
+    {
+      icon: <CgGenderMale size={19} color="gray" />,
+      text: "he/him",
+    },
   ];
   return (
     <div className=" mt-12">
       <Title upperText="Other" lowerText="Information" />
-      <div className="grid grid-cols-12 gap-3 mt-5">
+      <div className="grid grid-cols-12 gap-2.5 sm:gap-4 mt-5">
         {moreAboutMe.map((about, idx) => (
           <div key={idx} className="col-span-12 sm:col-span-6">
             <div className="flex items-center gap-3">
               <div className="p-[3px] rounded-md bg-gray-200/70 dark:bg-second-dark w-fit">
                 {about.icon}
               </div>
-              <p className="text-text-color font-medium">{about.text}</p>
+              <p className=" ">{about.text}</p>
             </div>
           </div>
         ))}
