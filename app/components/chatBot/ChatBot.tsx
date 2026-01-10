@@ -1,7 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import { FiMessageCircle, FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const ChatBot = () => {
   const [showChat, setShowChat] = useState(false);
@@ -28,7 +29,18 @@ const ChatBot = () => {
           >
             {/* Header */}
             <div className="flex items-center justify-between p-3 border-b border-gray-700 dark:border-gray-300">
-              <span className="font-semibold">AI Assistant</span>
+              <div className="flex items-center gap-4">
+                <div className="relative w-12 h-12 rounded-md overflow-hidden">
+                  <Image
+                    src="/aichatbot.jpg"
+                    alt="profile"
+                    fill
+                    className="object-cover rounded-full"
+                    priority
+                  />
+                </div>
+                <span className="font-semibold">Ubaidur's Assistant</span>
+              </div>
               <button onClick={() => setShowChat(false)}>
                 <FiX size={18} />
               </button>
