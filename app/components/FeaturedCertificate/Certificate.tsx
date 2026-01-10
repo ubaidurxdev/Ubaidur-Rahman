@@ -55,7 +55,7 @@ const certificates: Certificate[] = [
 const Certificate = () => {
   return (
     <div className="mt-12">
-      <Title lowerText="Certificate" upperText="Featured" />
+      <Title lowerText="Certificates" upperText="Featured" />
       <CertificatesList certificates={certificates} />
     </div>
   );
