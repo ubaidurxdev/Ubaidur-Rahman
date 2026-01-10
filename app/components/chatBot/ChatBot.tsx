@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { FiMessageCircle, FiX } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 const ChatBot = () => {
   const [showChat, setShowChat] = useState(false);
@@ -17,8 +18,13 @@ const ChatBot = () => {
 
       {/* Chat Box */}
       {showChat && (
-        <div className="fixed right-3 bottom-20 sm:right-6 sm:bottom-24 z-50 w-[320px] h-[430px] bg-black dark:bg-white text-white dark:text-black border border-gray-700 dark:border-gray-300 rounded-xl shadow-2xl flex flex-col">
-          
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.2 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          className="fixed right-3 bottom-20 sm:right-6 sm:bottom-24 z-50 w-[320px] h-[430px] bg-black dark:bg-white text-white dark:text-black border border-gray-700 dark:border-gray-300 rounded-xl shadow-2xl flex flex-col"
+        >
           {/* Header */}
           <div className="flex items-center justify-between p-3 border-b border-gray-700 dark:border-gray-300">
             <span className="font-semibold">AI Assistant</span>
@@ -42,7 +48,7 @@ const ChatBot = () => {
               className="w-full px-3 py-2 rounded-lg bg-gray-900 dark:bg-gray-100 text-white dark:text-black outline-none"
             />
           </div>
-        </div>
+        </motion.div>
       )}
     </>
   );
