@@ -85,8 +85,13 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-3">
-          <button className="keyboard-button hidden lg:flex text-xs items-center gap-1">
-            <IoIosSearch size={19} /> <p>CTRL + K</p>
+          <button className="keyboard-button hidden lg:flex group text-xs items-center text-text-color gap-1">
+            <IoIosSearch size={19} />
+            <p>
+              {" "}
+              <span className="keyboard-key">CTRL</span> +{" "}
+              <span className="keyboard-key px-1.5">K</span>
+            </p>
           </button>
           <ThemeToggleButton variant="circle" start="top-right" blur />
           {/* Mobile Hamburger */}
