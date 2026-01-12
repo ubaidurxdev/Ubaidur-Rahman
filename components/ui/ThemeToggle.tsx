@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Button } from "./button";
 import Moon from "../svgs/Moon";
 import Sun from "../svgs/Sun";
@@ -80,9 +80,13 @@ export const useThemeToggle = ({
     setIsDark,
   ]);
   useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA")
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement;
+
+      if (target.tagName === "INPUT" || target.tagName === "TEXTAREA") {
         return;
+      }
+
       if (e.key.toLowerCase() === "t") {
         toggleTheme();
       }
