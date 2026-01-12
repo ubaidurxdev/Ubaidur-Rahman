@@ -4,7 +4,8 @@ import { FiMessageCircle, FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
-
+import { Button } from "@/components/ui/button";
+import { Send } from "lucide-react";
 const ChatBot = () => {
   const [showChat, setShowChat] = useState(false);
 
@@ -58,14 +59,19 @@ const ChatBot = () => {
             </div>
 
             {/* Input */}
-            <div className="p-3 border-t border-gray-700 dark:border-gray-300">
-              <Input
-                type="text"
-                required
-                className="border border-gray-700 dark:border-gray-300 py-5"
-                placeholder="Ask me about my skills or projects..."
-                id="name"
-              />
+            <div>
+              <form className="p-3 border-t flex gap-2.5 border-gray-700 dark:border-gray-300">
+                <Input
+                  type="text"
+                  required
+                  className="border border-gray-700 dark:border-gray-300 py-5"
+                  placeholder="Ask me about my skills or projects..."
+                  id="name"
+                />
+                <Button className="p-5 bg-second-dark/80 dark:bg-gray-200/70 dark:hover:text-black dark:hover:bg-gray-200 hover:text-white hover:bg-second-dark duration-200 rounded-md">
+                  <Send size={19} />
+                </Button>
+              </form>
             </div>
           </motion.div>
         )}
