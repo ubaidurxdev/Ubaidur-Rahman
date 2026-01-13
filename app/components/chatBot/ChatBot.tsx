@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Send } from "lucide-react";
 const ChatBot = () => {
   const [showChat, setShowChat] = useState(false);
+  const time = new Date().toLocaleTimeString();
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement;
@@ -65,7 +66,8 @@ const ChatBot = () => {
             {/* Chat Body */}
             <div className="flex-1 p-3 overflow-y-auto text-sm">
               <div className="bg-gray-800 dark:bg-gray-200 dark:text-black w-[70%] p-2 rounded-md ">
-                Hi 👋 I'm Ubaidur's Assistant. How can I help you?
+                <p className="">Hi 👋 I'm Ubaidur's Assistant. How can I help you?</p>
+                <p className="text-right mt-2 text-text-color">{time}</p>
               </div>
             </div>
 
