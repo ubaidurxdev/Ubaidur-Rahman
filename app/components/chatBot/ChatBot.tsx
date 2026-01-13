@@ -39,7 +39,7 @@ const ChatBot = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.15 }}
             exit={{ opacity: 0, scale: 0.8 }}
-            className="fixed inset-x-0 bottom-20 mx-auto z-50 w-[90vw] h-[70vh] max-w-[800px] sm:right-6 sm:bottom-28 sm:inset-x-auto sm:mx-0 sm:w-[570px] sm:h-[580px] bg-black dark:bg-white text-white dark:text-black border border-gray-700 dark:border-gray-300 rounded-xl shadow-2xl flex flex-col"
+            className="fixed inset-x-0 bottom-20 mx-auto z-50 w-[90vw] h-[70vh] max-w-[800px] sm:right-6 sm:bottom-28 sm:inset-x-auto sm:mx-0 sm:w-[570px] sm:h-[580px] bg-black dark:bg-white text-white dark:text-black border border-gray-700 dark:border-gray-300 rounded-md shadow-2xl flex flex-col"
           >
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b border-gray-700 dark:border-gray-300">
@@ -54,7 +54,7 @@ const ChatBot = () => {
                   />
                 </div>
                 <div>
-                  <p className="font-semibold">Ubaidur's Assistant</p>
+                  <p className="font-medium">Ubaidur's Assistant</p>
                   <p className="text-text-color">Full Stack Developer</p>
                 </div>
               </div>
