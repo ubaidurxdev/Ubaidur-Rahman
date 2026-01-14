@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar/Navbar";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import Footer from "./components/Footer/Footer";
 import KeyboardNavigation from "./components/keyboardNavigation/KeyboardNavigation";
+import ChatBot from "./components/chatBot/ChatBot";
 const hankenGrotesk = Hanken_Grotesk({
   subsets: ["latin"],
 });
@@ -39,6 +40,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
+          <ChatBot />
           <KeyboardNavigation />
           <main className="grow max-w-[720px] w-full mt-14 mx-auto px-4 sm:px-0">
             {children}

@@ -13,7 +13,7 @@ const ChatBot = () => {
     const handleKeyDown = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement;
       if (target.tagName === "INPUT" || target.tagName === "TEXTAREA") return;
-      if (e.key.toLowerCase() === "c") {
+      if (e.key.toLowerCase() === "a") {
         setShowChat(!showChat);
       }
     };
