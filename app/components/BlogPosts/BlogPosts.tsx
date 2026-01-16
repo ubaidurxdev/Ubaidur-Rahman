@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import React from "react";
 import { motion } from "framer-motion";
 export interface BlogPostMeta {
   title: string;
@@ -20,10 +19,10 @@ const BlogPosts = ({ post, index }: { post: BlogPostMeta; index: number }) => {
     >
       <Link href={`/blogs/${post.slug}`}>
         <div className="flex sm:items-center flex-col mb-2 sm:flex-row gap-1 sm:justify-between">
-          <h4 className="text-lg font-bold ">{post.title}</h4>
-          <p className="font-medium text-text-color">{post.date}</p>
+          <h4 className="sm:text-lg text-base sm:font-bold font-semibold">{post.title}</h4>
+          <p className="font-medium sm:text-base text-sm text-text-color">{post.date}</p>
         </div>
-        <p className="text-text-color mt-3">{post.description}</p>
+        <p className="text-text-color mt-3 sm:text-base text-sm">{post.description}</p>
       </Link>
     </motion.div>
   );
