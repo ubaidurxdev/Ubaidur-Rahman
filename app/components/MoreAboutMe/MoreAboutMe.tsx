@@ -7,7 +7,8 @@ import Title from "../shared/Title";
 import { MdOutlineMail } from "react-icons/md";
 import { MdAccessTime } from "react-icons/md";
 import { CgGenderMale } from "react-icons/cg";
-import { BiWorld } from "react-icons/bi";
+import { IoCodeSlashSharp } from "react-icons/io5";
+import { LuCodeXml } from "react-icons/lu";
 const MoreAboutMe = () => {
   const [time, setTime] = useState("00:00:00");
 
@@ -43,7 +44,7 @@ const MoreAboutMe = () => {
       text: "ubaidurrahman661@gmail.com",
     },
     {
-      icon: <BiWorld size={19} color="gray" />,
+      icon: <LuCodeXml size={19} color="gray" />,
       text: "Full Stack Developer",
     },
     {

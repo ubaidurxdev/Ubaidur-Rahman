@@ -28,6 +28,7 @@ const KeyboardNavigation = () => {
       if(e.key.toLocaleLowerCase() === "h" && pathname !== "/"){
         router.push("/")
       }
+        // Only navigate to github account 
       if(e.key.toLocaleLowerCase() === "g"){
         router.push("https://github.com/ubaidurxdev")
       }
