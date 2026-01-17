@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { motion, Variants } from "framer-motion";
 const containerVariants: Variants = {
   hidden: {},
@@ -24,7 +23,13 @@ const fadeUpVariants: Variants = {
     },
   },
 };
-const PageHeader = () => {
+const PageHeader = ({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) => {
   return (
     <motion.div
       variants={containerVariants}
@@ -36,15 +41,14 @@ const PageHeader = () => {
         variants={fadeUpVariants}
         className="text-2xl sm:text-3xl font-bold text-center"
       >
-        Blogs
+        {title}
       </motion.h2>
 
       <motion.p
         variants={fadeUpVariants}
         className="pb-5 border-b-2 text-center text-text-color mt-6"
       >
-        Thoughts, tutorials, and experiences from my journey as a full-stack web
-        developer. I share what I learn while building real-world projects.
+        {description}
       </motion.p>
     </motion.div>
   );
