@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const KeyboardModal = ({
   setShowModal,
@@ -6,12 +7,21 @@ const KeyboardModal = ({
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.15 }}
       onClick={() => setShowModal(false)}
-      className="flex items-center fixed z-50 justify-center w-full min-h-screen bg-black/40 "
+      className="flex items-center fixed inset-0 z-50 justify-center bg-black/40"
     >
-      <div className="max-w-3xl h-96">fs</div>
-    </div>
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="w-xl h-96 bg-green-500"
+      >
+        fs
+      </div>
+    </motion.div>
   );
 };
 

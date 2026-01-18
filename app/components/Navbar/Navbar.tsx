@@ -164,7 +164,9 @@ const Navbar = () => {
       </header>
 
       {/* show keyboard modal  */}
-      {showModal && <KeyboardModal setShowModal={setShowModal} />}
+      <AnimatePresence>
+        {showModal && <KeyboardModal setShowModal={setShowModal} />}
+      </AnimatePresence>
     </>
   );
 };
