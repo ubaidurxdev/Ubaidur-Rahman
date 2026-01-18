@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { IoIosSearch } from "react-icons/io";
+import KeyboardModal from "../KeyboardModal/KeyboardModal";
 interface nav {
   id: number;
   label: string;
@@ -16,7 +17,12 @@ interface nav {
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [hovered, setHovered] = useState<number | null>(null);
+  const [showModal, setShowModal] = useState<boolean>(false);
   const pathname = usePathname();
+
+  const handleKeyboardModal = () => {
+    setShowModal(!showModal);
+  };
 
   const menuRef = useRef<HTMLDivElement>(null);
   const navItems: nav[] = [
@@ -85,7 +91,10 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-3">
-          <button className="keyboard-button hidden lg:flex group text-xs items-center text-text-color gap-1">
+          <button
+            onClick={() => handleKeyboardModal()}
+            className="keyboard-button hidden lg:flex group text-xs items-center text-text-color gap-1"
+          >
             <IoIosSearch size={19} />
             <p>
               {" "}
@@ -151,6 +160,9 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
+      {/* show keyboard modal  */}
+      {showModal && <KeyboardModal />}
     </header>
   );
 };
