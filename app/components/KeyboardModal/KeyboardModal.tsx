@@ -3,22 +3,36 @@ import { motion } from "framer-motion";
 import { IoIosSearch } from "react-icons/io";
 import { IoHomeOutline } from "react-icons/io5";
 import { IoBookOutline } from "react-icons/io5";
-const shorcut = [
+import { IoIosCall } from "react-icons/io";
+import { LuFileText } from "react-icons/lu";
+const shortCuts = [
   {
     id: 1,
     name: "Navigation",
     allShortCut: [
       {
-        icon: <IoHomeOutline size={20} color="gray" />,
+        icon: <IoHomeOutline size={19} color="gray" />,
         title: "Go to Home",
-        description: "got to homepage",
+        description: "go to home page",
         key: "H",
       },
       {
-        icon: <IoBookOutline size={20} color="gray" />,
+        icon: <IoBookOutline size={19} color="gray" />,
         title: "Go to Blogs",
         description: "browse all blogs",
         key: "B",
+      },
+      {
+        icon: <IoIosCall size={19} color="gray" />,
+        title: "Go to contact",
+        description: "go to contact page",
+        key: "C",
+      },
+      {
+        icon: <LuFileText size={19} color="gray" />,
+        title: "Go to resume",
+        description: "go to resume page",
+        key: "R",
       },
     ],
   },
@@ -48,6 +62,30 @@ const KeyboardModal = ({
             className="w-full py-0.5 outline-none border-none"
             placeholder="Type a command or search..."
           />
+        </div>
+        <div>
+          {shortCuts.map((short) => (
+            <div key={short.id}>
+              <p className="text-text-color font-semibold mt-2 text-sm mb-1">
+                {short.name}
+              </p>
+              <div>
+                {short.allShortCut.map((key, idx) => (
+                  <div key={idx} className="mt-3">
+                    <div className="flex items-center gap-2">
+                      {key.icon}
+                      <div>
+                        <p className="text-sm font-medium ">{key.title}</p>
+                        <p className="text-xs text-text-color">
+                          {key.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </motion.div>
