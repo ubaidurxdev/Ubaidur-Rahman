@@ -11,25 +11,25 @@ const shortCuts = [
     name: "Navigation",
     allShortCut: [
       {
-        icon: <IoHomeOutline size={19} color="gray" />,
+        icon: <IoHomeOutline size={20} color="gray" />,
         title: "Go to Home",
         description: "go to home page",
         key: "H",
       },
       {
-        icon: <IoBookOutline size={19} color="gray" />,
+        icon: <IoBookOutline size={20} color="gray" />,
         title: "Go to Blogs",
         description: "browse all blogs",
         key: "B",
       },
       {
-        icon: <IoIosCall size={19} color="gray" />,
+        icon: <IoIosCall size={20} color="gray" />,
         title: "Go to contact",
         description: "go to contact page",
         key: "C",
       },
       {
-        icon: <LuFileText size={19} color="gray" />,
+        icon: <LuFileText size={20} color="gray" />,
         title: "Go to resume",
         description: "go to resume page",
         key: "R",
@@ -54,7 +54,7 @@ const KeyboardModal = ({
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="w-xl h-96 bg-gray-50 dark:bg-neutral-800 p-2 rounded-md"
+        className="w-xl h-96 bg-gray-50 dark:bg-neutral-800 px-3 py-1.5 rounded-md"
       >
         <div className="flex items-center gap-1 border-b pb-1">
           <IoIosSearch size={20} color="gray" />
@@ -66,20 +66,25 @@ const KeyboardModal = ({
         <div>
           {shortCuts.map((short) => (
             <div key={short.id}>
-              <p className="text-text-color font-semibold mt-2 text-sm mb-1">
+              <p className="text-text-color font-semibold mt-2 text-sm ">
                 {short.name}
               </p>
               <div>
                 {short.allShortCut.map((key, idx) => (
-                  <div key={idx} className="mt-3">
-                    <div className="flex items-center gap-2">
+                  <div key={idx} className="mt-4 flex items-center duration-200 hover:bg-gray-100 p-1 rounded-md justify-between">
+                    <div className="flex items-center gap-3">
                       {key.icon}
                       <div>
                         <p className="text-sm font-medium ">{key.title}</p>
-                        <p className="text-xs text-text-color">
+                        <p className="text-[13px] text-text-color">
                           {key.description}
                         </p>
                       </div>
+                    </div>
+                    <div>
+                      <span className="border py-1 bg-gray-100 px-1.5 text-xs rounded-[3px]">
+                        {key.key}
+                      </span>
                     </div>
                   </div>
                 ))}
