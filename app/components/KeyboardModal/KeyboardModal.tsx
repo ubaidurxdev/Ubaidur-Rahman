@@ -1,7 +1,28 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Input } from "@/components/ui/input";
 import { IoIosSearch } from "react-icons/io";
+import { IoHomeOutline } from "react-icons/io5";
+import { IoBookOutline } from "react-icons/io5";
+const shorcut = [
+  {
+    id: 1,
+    name: "Navigation",
+    allShortCut: [
+      {
+        icon: <IoHomeOutline size={20} color="gray" />,
+        title: "Go to Home",
+        description: "got to homepage",
+        key: "H",
+      },
+      {
+        icon: <IoBookOutline size={20} color="gray" />,
+        title: "Go to Blogs",
+        description: "browse all blogs",
+        key: "B",
+      },
+    ],
+  },
+];
 
 const KeyboardModal = ({
   setShowModal,
