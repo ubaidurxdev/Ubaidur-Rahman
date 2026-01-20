@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { IoIosSearch } from "react-icons/io";
 import { IoHomeOutline } from "react-icons/io5";
@@ -63,6 +63,12 @@ const KeyboardModal = ({
 }: {
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
   return (
     <motion.div
       initial={{ opacity: 0 }}
