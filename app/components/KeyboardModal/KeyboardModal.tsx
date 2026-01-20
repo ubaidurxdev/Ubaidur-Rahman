@@ -5,6 +5,8 @@ import { IoHomeOutline } from "react-icons/io5";
 import { IoBookOutline } from "react-icons/io5";
 import { IoIosCall } from "react-icons/io";
 import { LuFileText } from "react-icons/lu";
+import { FiMessageCircle } from "react-icons/fi";
+import { IoSunnyOutline } from "react-icons/io5";
 const shortCuts = [
   {
     id: 1,
@@ -25,14 +27,32 @@ const shortCuts = [
       {
         icon: <IoIosCall size={20} color="gray" />,
         title: "Go to contact",
-        description: "go to contact page",
+        description: "View Contact Info",
         key: "C",
       },
       {
         icon: <LuFileText size={20} color="gray" />,
         title: "Go to resume",
-        description: "go to resume page",
+        description: "Check out my resume",
         key: "R",
+      },
+    ],
+  },
+  {
+    id: 2,
+    name: "Features",
+    allShortCut: [
+      {
+        icon: <FiMessageCircle size={20} color="gray" />,
+        title: "Open the chatbot",
+        description: "Ask something from AI",
+        key: "A",
+      },
+      {
+        icon: <IoSunnyOutline size={20} color="gray" />,
+        title: "Toggle theme",
+        description: "Change to light or dark mode",
+        key: "T",
       },
     ],
   },
@@ -54,7 +74,7 @@ const KeyboardModal = ({
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="w-xl h-96 bg-gray-50 dark:bg-neutral-800 px-3 py-1.5 rounded-md"
+        className="w-xl bg-gray-50 dark:bg-neutral-800 px-3 py-1.5 rounded-md"
       >
         <div className="flex items-center gap-1 border-b pb-1">
           <IoIosSearch size={20} color="gray" />
@@ -63,13 +83,13 @@ const KeyboardModal = ({
             placeholder="Type a command or search..."
           />
         </div>
-        <div>
+        <div className="h-80 overflow-y-scroll">
           {shortCuts.map((short) => (
             <div key={short.id}>
-              <p className="text-text-color font-semibold mt-2 text-sm ">
+              <p className="text-text-color font-semibold mt-3 text-sm ">
                 {short.name}
               </p>
-              <div className="space-y-2.5 mt-2">
+              <div className="space-y-2.5 mt-1">
                 {short.allShortCut.map((key, idx) => (
                   <div
                     key={idx}
@@ -101,5 +121,3 @@ const KeyboardModal = ({
 };
 
 export default KeyboardModal;
-
-
