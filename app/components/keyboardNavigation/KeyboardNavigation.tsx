@@ -32,6 +32,10 @@ const KeyboardNavigation = () => {
       if (e.key.toLocaleLowerCase() === "g") {
         router.push("https://github.com/ubaidurxdev");
       }
+
+      if(e.shiftKey && e.key === "ArrowUp"){
+        window.scrollTo({top:0,behavior:"smooth"})
+      }
     };
 
     window.addEventListener("keydown", handleKeyDown);
