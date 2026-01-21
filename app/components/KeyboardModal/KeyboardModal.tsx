@@ -71,7 +71,7 @@ const shortCuts = [
       {
         icon: <FaLinkedin size={20} color="gray" />,
         title: "Open Linkedin",
-        description: "CHeckout my LinkedIn posts",
+        description: "Checkout my LinkedIn posts",
         key: "SHIFT + L",
       },
       

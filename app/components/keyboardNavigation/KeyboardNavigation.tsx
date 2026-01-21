@@ -36,6 +36,11 @@ const KeyboardNavigation = () => {
       if (e.shiftKey && e.key === "ArrowUp") {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
+      if (e.shiftKey && e.key.toLocaleLowerCase() === "l") {
+        router.push(
+          "https://www.linkedin.com/in/ubaidur-rahman01/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        );
+      }
     };
 
     window.addEventListener("keydown", handleKeyDown);
