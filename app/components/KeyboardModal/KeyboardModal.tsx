@@ -88,6 +88,12 @@ const shortCuts = [
         description: "Checkout my Facebook posts",
         key: "SHIFT + F",
       },
+      {
+        icon: <FaSquareFacebook size={20} color="gray" />,
+        title: "Open Github",
+        description: "Checkout my repositories",
+        key: "SHIFT + G",
+      },
     ],
   },
 ];
@@ -123,7 +129,7 @@ const KeyboardModal = ({
             placeholder="Type a command or search..."
           />
         </div>
-        <div className="h-80 overflow-y-scroll">
+        <div className="h-96 overflow-y-scroll">
           {shortCuts.map((short) => (
             <div key={short.id}>
               <p className="text-text-color font-semibold mt-3 text-sm ">
