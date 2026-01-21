@@ -11,6 +11,7 @@ import { IoIosArrowRoundUp } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaSquareFacebook } from "react-icons/fa6";
+import { MdOutlineEmail } from "react-icons/md";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa";
 const shortCuts = [
@@ -85,6 +86,12 @@ const shortCuts = [
         key: "SHIFT + L",
       },
       {
+        icon: <MdOutlineEmail size={20} color="gray" />,
+        title: "Send Email",
+        description: "Contact me via email",
+        key: "SHIFT + E",
+      },
+      {
         icon: <FaSquareFacebook size={20} color="gray" />,
         title: "Open Facebook",
         description: "Checkout my Facebook posts",
@@ -140,9 +147,7 @@ const KeyboardModal = ({
         <div className="h-96 overflow-y-scroll">
           {shortCuts.map((short) => (
             <div key={short.id}>
-              <p className=" font-semibold mt-3 text-[15px] ">
-                {short.name}
-              </p>
+              <p className=" font-semibold mt-3 text-[15px] ">{short.name}</p>
               <div className="space-y-2.5 mt-1">
                 {short.allShortCut.map((key, idx) => (
                   <div

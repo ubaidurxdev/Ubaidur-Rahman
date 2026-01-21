@@ -12,23 +12,18 @@ const KeyboardNavigation = () => {
       const target = e.target as HTMLElement;
       if (target.tagName === "INPUT" || target.tagName === "TEXTAREA") return;
 
-      // Only navigate to /blogs if not already on /blogs
       if (e.key.toLowerCase() === "b" && pathname !== "/blogs") {
         router.push("/blogs");
       }
-      // Only navigate to /contact if not already on /contact
       if (e.key.toLocaleLowerCase() === "c" && pathname !== "/contact") {
         router.push("/contact");
       }
-      // Only navigate to /resume if not already on /resume
       if (e.key.toLocaleLowerCase() === "r" && pathname !== "/resume") {
         router.push("/resume");
       }
-      // Only navigate to / if not already on /
       if (e.key.toLocaleLowerCase() === "h" && pathname !== "/") {
         router.push("/");
       }
-      // Only navigate to github account
       if (e.shiftKey && e.key.toLocaleLowerCase() === "g") {
         router.push("https://github.com/ubaidurxdev");
       }
@@ -47,14 +42,13 @@ const KeyboardNavigation = () => {
         );
       }
       if (e.shiftKey && e.key.toLocaleLowerCase() === "w") {
-        router.push(
-          "https://wa.me/8801735166610",
-        );
+        router.push("https://wa.me/8801735166610");
       }
       if (e.shiftKey && e.key.toLocaleLowerCase() === "t") {
-        router.push(
-          "https://x.com/ubaidurxdev?t=dXrrCouR6TD9CaqpfD2DGQ&s=08",
-        );
+        router.push("https://x.com/ubaidurxdev?t=dXrrCouR6TD9CaqpfD2DGQ&s=08");
+      }
+      if (e.shiftKey && e.key.toLocaleLowerCase() === "e") {
+        navigator.clipboard.writeText("ubaidurrahman661@gmail.com");
       }
     };
 
