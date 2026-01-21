@@ -8,8 +8,10 @@ import { LuFileText } from "react-icons/lu";
 import { FiMessageCircle } from "react-icons/fi";
 import { IoSunnyOutline } from "react-icons/io5";
 import { IoIosArrowRoundUp } from "react-icons/io";
+import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaSquareFacebook } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa";
 const shortCuts = [
   {
@@ -89,10 +91,16 @@ const shortCuts = [
         key: "SHIFT + F",
       },
       {
-        icon: <FaSquareFacebook size={20} color="gray" />,
+        icon: <FaGithub size={20} color="gray" />,
         title: "Open Github",
         description: "Checkout my repositories",
         key: "SHIFT + G",
+      },
+      {
+        icon: <FaXTwitter size={20} color="gray" />,
+        title: "Open X",
+        description: "Checkout my X posts",
+        key: "SHIFT + T",
       },
     ],
   },
@@ -132,7 +140,7 @@ const KeyboardModal = ({
         <div className="h-96 overflow-y-scroll">
           {shortCuts.map((short) => (
             <div key={short.id}>
-              <p className="text-text-color font-semibold mt-3 text-sm ">
+              <p className=" font-semibold mt-3 text-[15px] ">
                 {short.name}
               </p>
               <div className="space-y-2.5 mt-1">

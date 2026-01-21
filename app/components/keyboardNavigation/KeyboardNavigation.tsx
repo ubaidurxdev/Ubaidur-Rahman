@@ -51,6 +51,11 @@ const KeyboardNavigation = () => {
           "https://wa.me/8801735166610",
         );
       }
+      if (e.shiftKey && e.key.toLocaleLowerCase() === "t") {
+        router.push(
+          "https://x.com/ubaidurxdev?t=dXrrCouR6TD9CaqpfD2DGQ&s=08",
+        );
+      }
     };
 
     window.addEventListener("keydown", handleKeyDown);
