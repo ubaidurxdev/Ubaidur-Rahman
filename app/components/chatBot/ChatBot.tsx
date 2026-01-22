@@ -44,13 +44,13 @@ const ChatBot = () => {
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b border-gray-700 dark:border-gray-300">
               <div className="flex items-center gap-4">
-                <div className="relative w-12 h-12 rounded-md overflow-hidden">
+                <div>
                   <Image
-                    src="/aichatbot.jpg"
-                    alt="profile"
-                    fill
-                    className="object-cover rounded-full"
-                    priority
+                    width={48}
+                    height={48}
+                    className="object-cover bg-center rounded-full"
+                    src={"/avatar.png"}
+                    alt="Logo"
                   />
                 </div>
                 <div>
@@ -69,7 +69,9 @@ const ChatBot = () => {
             {/* Chat Body */}
             <div className="flex-1 p-3 overflow-y-auto text-sm">
               <div className="bg-gray-800 dark:bg-gray-200 dark:text-black w-[70%] p-2 rounded-md ">
-                <p className="">Hi 👋 I'm Ubaidur's Assistant. How can I help you?</p>
+                <p className="">
+                  Hi 👋 I'm Ubaidur's Assistant. How can I help you?
+                </p>
                 <p className="text-right mt-2 text-text-color">{time}</p>
               </div>
             </div>
