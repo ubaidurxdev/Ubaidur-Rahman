@@ -83,7 +83,7 @@ const Navbar = () => {
                 key={item.id}
                 onMouseEnter={() => setHovered(idx)}
                 onMouseLeave={() => setHovered(null)}
-                className="relative px-3 py-1 "
+                className="relative px-2.5 py-1 "
               >
                 {hovered === idx && (
                   <motion.span
@@ -93,7 +93,7 @@ const Navbar = () => {
                 )}
                 <span
                   className={`relative z-10 ${
-                    item.href === pathname ? "font-bold" : ""
+                    item.href === pathname ? "font-semibold" : ""
                   }`}
                 >
                   {item.label}
@@ -102,16 +102,17 @@ const Navbar = () => {
             ))}
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <button
               onClick={() => handleKeyboardModal()}
-              className="border-3 p-2 rounded-md hidden lg:flex group text-xs items-center text-text-color gap-1"
+              className="border-3 py-[7px] px-1 rounded-md hidden lg:flex group text-xs items-center text-text-color gap-1"
             >
               <IoIosSearch size={19} />
+
               <p>
                 {" "}
-                <span className="keyboard-key">CTRL</span> +{" "}
-                <span className="keyboard-key px-1">K</span>
+                <span className="keyboard-key">CTRL</span>
+                <span className="keyboard-key px-1 ml-1.5">K</span>
               </p>
             </button>
             <ThemeToggleButton variant="circle" start="top-right" blur />

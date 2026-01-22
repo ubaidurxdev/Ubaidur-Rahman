@@ -47,7 +47,7 @@ const Page = () => {
       animate="show"
     >
       <PageHeader
-        title="Conact Me"
+        title="Contact Me"
         description="Don’t hesitate to get in touch—whether it’s a new project idea or a
           collaboration invite. I’m eager to connect and typically respond
           within a day. Let’s create something amazing together!"
