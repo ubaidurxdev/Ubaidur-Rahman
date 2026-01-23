@@ -5,13 +5,14 @@ import Nextjs from "@/components/svgs/Next";
 import { Newspaper, Send } from "lucide-react";
 import Link from "next/link";
 import PostgreSQL from "@/components/svgs/PostgreSql";
-import { motion, Variants } from "framer-motion";
+import { AnimatePresence, motion, Variants } from "framer-motion";
 import TechButton from "../TechButton/TechButton";
 import SocialIcons from "../socialIcons/SocialIcons";
 import Expressjs from "@/components/svgs/Express";
 import Image from "next/image";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import CircuitMini from "../CircuitBackground/CircuitBackground";
+import { useEffect, useState } from "react";
 
 interface TechStack {
   name: string;
@@ -56,8 +57,21 @@ const itemVariants: Variants = {
     transition: { duration: 0.25, ease: "easeOut" },
   },
 };
+const roles = [
+  "A Full Stack Developer",
+  "A Frontend Developer",
+  "A Backend Developer",
+];
 
 const Hero = () => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % roles.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
   return (
     <motion.div
       variants={containerVariants}
@@ -72,7 +86,6 @@ const Hero = () => {
         className="absolute sm:top-56 top-[315px] right-0 opacity-60 dark:opacity-80 pointer-events-none"
       >
         <CircuitMini />
-       
       </motion.div>
 
       {/* Content */}
@@ -95,12 +108,18 @@ const Hero = () => {
               Ubaidur <RiVerifiedBadgeFill size={20} />{" "}
               <span className="hidden sm:block">— </span>
             </motion.p>
-            <motion.span
-              variants={itemVariants}
-              className="text-text-color text-lg sm:text-xl"
-            >
-              A Full Stack Developer{" "}
-            </motion.span>
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={roles[index]}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="text-text-color text-lg sm:text-xl inline-block"
+              >
+                {roles[index]}
+              </motion.span>
+            </AnimatePresence>
           </div>
         </div>
 
@@ -136,7 +155,7 @@ const Hero = () => {
         <motion.div variants={itemVariants}>
           <SocialIcons />
         </motion.div>
-         <motion.div
+        <motion.div
           className="mt-6 flex items-center  gap-2 sm:gap-6"
           variants={itemVariants}
         >
