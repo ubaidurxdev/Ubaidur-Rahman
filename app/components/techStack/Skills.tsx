@@ -39,13 +39,13 @@ export default function Skills() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.25, delay: 0.1 }}
         viewport={{ once: true }}
-        className="flex items-center gap-0.5 sm:gap-1 mt-1"
+        className="flex items-center -space-x-2 mt-1"
       >
         {skills.map((skill, index) => {
           const isHovered = hovered === index;
           return (
             <motion.div
-              className="border p-1.5 rounded-full flex items-center justify-center cursor-pointer overflow-hidden"
+              className="border dark:border-neutral-700 p-1.5 rounded-full flex bg-white dark:bg-black items-center justify-center cursor-pointer overflow-hidden"
               layout
               key={index}
               onMouseEnter={() => setHovered(index)}
