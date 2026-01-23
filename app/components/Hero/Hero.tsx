@@ -115,8 +115,8 @@ const Hero = () => {
             href={postgreSql.doc}
           />
           . With a strong focus on clean{" "}
-          <span className="font-semibold text-black dark:text-white">UI</span> ,
-          user experience and{" "}
+          <span className="font-semibold text-black dark:text-white">UI</span> ,{" "}
+          <span className="font-semibold text-black dark:text-white">UX</span> and{" "}
           <span className="font-semibold text-black dark:text-white">
             performance
           </span>
