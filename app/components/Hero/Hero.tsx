@@ -58,9 +58,9 @@ const itemVariants: Variants = {
   },
 };
 const roles = [
-  "A Full Stack Developer",
-  "A Frontend Developer",
-  "A Backend Developer",
+  "Full Stack Developer",
+  "Open source contributor",
+  "Creative Developer",
 ];
 
 const Hero = () => {
@@ -102,19 +102,18 @@ const Hero = () => {
           </motion.div>
           <div className="flex items-start sm:items-center gap-0 sm:gap-2 flex-col sm:flex-row">
             <motion.p
-              className="font-semibold flex items-center gap-0.5 sm:gap-2 text-[21px] sm:text-[28px]"
+              className="font-semibold flex items-center gap-1 sm:gap-2 text-[22px] sm:text-[28px]"
               variants={itemVariants}
             >
-              Ubaidur <RiVerifiedBadgeFill size={20} />{" "}
-              <span className="hidden sm:block">— </span>
+              Ubaidur <RiVerifiedBadgeFill size={20} /> —
             </motion.p>
             <AnimatePresence mode="wait">
               <motion.span
                 key={roles[index]}
-                initial={{ opacity: 0, y: 15 }}
+                initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.35, ease: "easeInOut" }}
                 className="text-text-color text-lg sm:text-xl inline-block"
               >
                 {roles[index]}

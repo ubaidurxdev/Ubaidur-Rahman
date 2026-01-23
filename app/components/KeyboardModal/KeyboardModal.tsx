@@ -14,110 +14,116 @@ import { FaSquareFacebook } from "react-icons/fa6";
 import { MdOutlineEmail } from "react-icons/md";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa";
-const shortCuts = [
-  {
-    id: 1,
-    name: "Navigation",
-    allShortCut: [
-      {
-        icon: <IoHomeOutline size={20} color="gray" />,
-        title: "Go to Home",
-        description: "go to home page",
-        key: "H", 
-      },
-      {
-        icon: <IoBookOutline size={20} color="gray" />,
-        title: "Go to Blogs",
-        description: "browse all blogs",
-        key: "B",
-      },
-      {
-        icon: <IoIosCall size={20} color="gray" />,
-        title: "Go to contact",
-        description: "View Contact Info",
-        key: "C",
-      },
-      {
-        icon: <LuFileText size={20} color="gray" />,
-        title: "Go to resume",
-        description: "Check out my resume",
-        key: "R",
-      },
-    ],
-  },
-  {
-    id: 2,
-    name: "Features",
-    allShortCut: [
-      {
-        icon: <FiMessageCircle size={20} color="gray" />,
-        title: "Open the chatbot",
-        description: "Ask something from AI",
-        key: "A",
-      },
-      {
-        icon: <IoSunnyOutline size={20} color="gray" />,
-        title: "Toggle theme",
-        description: "Change to light or dark mode",
-        key: "T",
-      },
-      {
-        icon: <IoIosArrowRoundUp size={20} color="gray" />,
-        title: "Scroll to top",
-        description: "Scroll to top of the page",
-        key: `SHIFT + ↑`,
-      },
-    ],
-  },
-  {
-    id: 3,
-    name: "Social links",
-    allShortCut: [
-      {
-        icon: <FaWhatsapp size={20} color="gray" />,
-        title: "Chat on WhatsApp",
-        description: "Start a conversation with me",
-        key: "SHIFT + W",
-      },
-      {
-        icon: <FaLinkedin size={20} color="gray" />,
-        title: "Open Linkedin",
-        description: "Checkout my LinkedIn posts",
-        key: "SHIFT + L",
-      },
-      {
-        icon: <MdOutlineEmail size={20} color="gray" />,
-        title: "Send Email",
-        description: "Contact me via email",
-        key: "SHIFT + E",
-      },
-      {
-        icon: <FaSquareFacebook size={20} color="gray" />,
-        title: "Open Facebook",
-        description: "Checkout my Facebook posts",
-        key: "SHIFT + F",
-      },
-      {
-        icon: <FaGithub size={20} color="gray" />,
-        title: "Open Github",
-        description: "Checkout my repositories",
-        key: "SHIFT + G",
-      },
-      {
-        icon: <FaXTwitter size={20} color="gray" />,
-        title: "Open X",
-        description: "Checkout my X posts",
-        key: "SHIFT + T",
-      },
-    ],
-  },
-];
+import { useRouter } from "next/navigation";
 
 const KeyboardModal = ({
   setShowModal,
 }: {
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
+  const router = useRouter();
+  const shortCuts = [
+    {
+      id: 1,
+      name: "Navigation",
+      allShortCut: [
+        {
+          icon: <IoHomeOutline size={20} color="gray" />,
+          title: "Go to Home",
+          description: "go to home page",
+          key: "H",
+          action: router.push("/"),
+        },
+        {
+          icon: <IoBookOutline size={20} color="gray" />,
+          title: "Go to Blogs",
+          description: "browse all blogs",
+          key: "B",
+          action: router.push("/blogs"),
+        },
+        {
+          icon: <IoIosCall size={20} color="gray" />,
+          title: "Go to contact",
+          description: "View Contact Info",
+          key: "C",
+          action: router.push("/contact"),
+        },
+        {
+          icon: <LuFileText size={20} color="gray" />,
+          title: "Go to resume",
+          description: "Check out my resume",
+          key: "R",
+          action: router.push("/resume"),
+        },
+      ],
+    },
+    {
+      id: 2,
+      name: "Features",
+      allShortCut: [
+        {
+          icon: <FiMessageCircle size={20} color="gray" />,
+          title: "Open the chatbot",
+          description: "Ask something from AI",
+          key: "A",
+        },
+        {
+          icon: <IoSunnyOutline size={20} color="gray" />,
+          title: "Toggle theme",
+          description: "Change to light or dark mode",
+          key: "T",
+        },
+        {
+          icon: <IoIosArrowRoundUp size={20} color="gray" />,
+          title: "Scroll to top",
+          description: "Scroll to top of the page",
+          key: `SHIFT + ↑`,
+        },
+      ],
+    },
+    {
+      id: 3,
+      name: "Social links",
+      allShortCut: [
+        {
+          icon: <FaWhatsapp size={20} color="gray" />,
+          title: "Chat on WhatsApp",
+          description: "Start a conversation with me",
+          key: "SHIFT + W",
+        },
+        {
+          icon: <FaLinkedin size={20} color="gray" />,
+          title: "Open Linkedin",
+          description: "Checkout my LinkedIn posts",
+          key: "SHIFT + L",
+        },
+        {
+          icon: <MdOutlineEmail size={20} color="gray" />,
+          title: "Send Email",
+          description: "Contact me via email",
+          key: "SHIFT + E",
+        },
+        {
+          icon: <FaSquareFacebook size={20} color="gray" />,
+          title: "Open Facebook",
+          description: "Checkout my Facebook posts",
+          key: "SHIFT + F",
+        },
+        {
+          icon: <FaGithub size={20} color="gray" />,
+          title: "Open Github",
+          description: "Checkout my repositories",
+          key: "SHIFT + G",
+        },
+        {
+          icon: <FaXTwitter size={20} color="gray" />,
+          title: "Open X",
+          description: "Checkout my X posts",
+          key: "SHIFT + T",
+        },
+      ],
+    },
+  ];
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
