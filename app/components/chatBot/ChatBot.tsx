@@ -48,8 +48,8 @@ const ChatBot = () => {
                   <Image
                     width={48}
                     height={48}
-                    className="object-cover bg-center rounded-full"
-                    src={"/avatar.png"}
+                    className="object-cover border-2 border-gray-300 bg-center rounded-full"
+                    src={"/logo.png"}
                     alt="Logo"
                   />
                 </div>
