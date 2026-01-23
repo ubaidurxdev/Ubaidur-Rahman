@@ -69,7 +69,7 @@ const Hero = () => {
       {/* Decorative circuit animation */}
       <motion.div
         variants={itemVariants}
-        className="absolute sm:top-52 top-[275px] right-0 opacity-60 dark:opacity-80 pointer-events-none"
+        className="absolute sm:top-56 top-[285px] right-0 opacity-60 dark:opacity-80 pointer-events-none"
       >
         <CircuitMini />
       </motion.div>
