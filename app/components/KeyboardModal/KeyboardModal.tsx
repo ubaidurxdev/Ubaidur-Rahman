@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { IoIosSearch } from "react-icons/io";
 import { IoHomeOutline } from "react-icons/io5";
@@ -16,114 +16,127 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 
+const shortCuts = [
+  {
+    id: 1,
+    name: "Navigation",
+    allShortCut: [
+      {
+        icon: <IoHomeOutline size={20} color="gray" />,
+        title: "Go to Home",
+        description: "go to home page",
+        key: "H",
+        // action: router.push("/"),
+      },
+      {
+        icon: <IoBookOutline size={20} color="gray" />,
+        title: "Go to Blogs",
+        description: "browse all blogs",
+        key: "B",
+        // action: router.push("/blogs"),
+      },
+      {
+        icon: <IoIosCall size={20} color="gray" />,
+        title: "Go to contact",
+        description: "View Contact Info",
+        key: "C",
+        // action: router.push("/contact"),
+      },
+      {
+        icon: <LuFileText size={20} color="gray" />,
+        title: "Go to resume",
+        description: "Check out my resume",
+        key: "R",
+        // action: router.push("/resume"),
+      },
+    ],
+  },
+  {
+    id: 2,
+    name: "Features",
+    allShortCut: [
+      {
+        icon: <FiMessageCircle size={20} color="gray" />,
+        title: "Open the chatbot",
+        description: "Ask something from AI",
+        key: "A",
+      },
+      {
+        icon: <IoSunnyOutline size={20} color="gray" />,
+        title: "Toggle theme",
+        description: "Change to light or dark mode",
+        key: "T",
+      },
+      {
+        icon: <IoIosArrowRoundUp size={20} color="gray" />,
+        title: "Scroll to top",
+        description: "Scroll to top of the page",
+        key: `SHIFT + ↑`,
+      },
+    ],
+  },
+  {
+    id: 3,
+    name: "Social links",
+    allShortCut: [
+      {
+        icon: <FaWhatsapp size={20} color="gray" />,
+        title: "Chat on WhatsApp",
+        description: "Start a conversation with me",
+        key: "SHIFT + W",
+      },
+      {
+        icon: <FaLinkedin size={20} color="gray" />,
+        title: "Open Linkedin",
+        description: "Checkout my LinkedIn posts",
+        key: "SHIFT + L",
+      },
+      {
+        icon: <MdOutlineEmail size={20} color="gray" />,
+        title: "Send Email",
+        description: "Contact me via email",
+        key: "SHIFT + E",
+      },
+      {
+        icon: <FaSquareFacebook size={20} color="gray" />,
+        title: "Open Facebook",
+        description: "Checkout my Facebook posts",
+        key: "SHIFT + F",
+      },
+      {
+        icon: <FaGithub size={20} color="gray" />,
+        title: "Open Github",
+        description: "Checkout my repositories",
+        key: "SHIFT + G",
+      },
+      {
+        icon: <FaXTwitter size={20} color="gray" />,
+        title: "Open X",
+        description: "Checkout my X posts",
+        key: "SHIFT + T",
+      },
+    ],
+  },
+];
+
 const KeyboardModal = ({
   setShowModal,
 }: {
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  const router = useRouter();
-  const shortCuts = [
-    {
-      id: 1,
-      name: "Navigation",
-      allShortCut: [
-        {
-          icon: <IoHomeOutline size={20} color="gray" />,
-          title: "Go to Home",
-          description: "go to home page",
-          key: "H",
-          // action: router.push("/"),
-        },
-        {
-          icon: <IoBookOutline size={20} color="gray" />,
-          title: "Go to Blogs",
-          description: "browse all blogs",
-          key: "B",
-          // action: router.push("/blogs"),
-        },
-        {
-          icon: <IoIosCall size={20} color="gray" />,
-          title: "Go to contact",
-          description: "View Contact Info",
-          key: "C",
-          // action: router.push("/contact"),
-        },
-        {
-          icon: <LuFileText size={20} color="gray" />,
-          title: "Go to resume",
-          description: "Check out my resume",
-          key: "R",
-          // action: router.push("/resume"),
-        },
-      ],
-    },
-    {
-      id: 2,
-      name: "Features",
-      allShortCut: [
-        {
-          icon: <FiMessageCircle size={20} color="gray" />,
-          title: "Open the chatbot",
-          description: "Ask something from AI",
-          key: "A",
-        },
-        {
-          icon: <IoSunnyOutline size={20} color="gray" />,
-          title: "Toggle theme",
-          description: "Change to light or dark mode",
-          key: "T",
-        },
-        {
-          icon: <IoIosArrowRoundUp size={20} color="gray" />,
-          title: "Scroll to top",
-          description: "Scroll to top of the page",
-          key: `SHIFT + ↑`,
-        },
-      ],
-    },
-    {
-      id: 3,
-      name: "Social links",
-      allShortCut: [
-        {
-          icon: <FaWhatsapp size={20} color="gray" />,
-          title: "Chat on WhatsApp",
-          description: "Start a conversation with me",
-          key: "SHIFT + W",
-        },
-        {
-          icon: <FaLinkedin size={20} color="gray" />,
-          title: "Open Linkedin",
-          description: "Checkout my LinkedIn posts",
-          key: "SHIFT + L",
-        },
-        {
-          icon: <MdOutlineEmail size={20} color="gray" />,
-          title: "Send Email",
-          description: "Contact me via email",
-          key: "SHIFT + E",
-        },
-        {
-          icon: <FaSquareFacebook size={20} color="gray" />,
-          title: "Open Facebook",
-          description: "Checkout my Facebook posts",
-          key: "SHIFT + F",
-        },
-        {
-          icon: <FaGithub size={20} color="gray" />,
-          title: "Open Github",
-          description: "Checkout my repositories",
-          key: "SHIFT + G",
-        },
-        {
-          icon: <FaXTwitter size={20} color="gray" />,
-          title: "Open X",
-          description: "Checkout my X posts",
-          key: "SHIFT + T",
-        },
-      ],
-    },
-  ];
+  const [searchTerm, setSearchTerm] = useState<string>("");
+
+ const filteredShortcuts = shortCuts
+  .map((group) => ({
+    ...group,
+    allShortCut: group.allShortCut.filter((item) =>
+      item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.key.toLowerCase().includes(searchTerm.toLowerCase())
+    ),
+  }))
+  .filter((group) => group.allShortCut.length > 0);
+
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -146,12 +159,13 @@ const KeyboardModal = ({
         <div className="flex items-center gap-1 border-b pb-1">
           <IoIosSearch size={20} color="gray" />
           <input
+            onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full py-0.5 outline-none border-none"
             placeholder="Type a command or search..."
           />
         </div>
         <div className="h-96 overflow-y-scroll">
-          {shortCuts.map((short) => (
+          {filteredShortcuts.map((short) => (
             <div key={short.id}>
               <p className=" font-semibold mt-3 text-[15px] ">{short.name}</p>
               <div className="space-y-2.5 mt-1">
