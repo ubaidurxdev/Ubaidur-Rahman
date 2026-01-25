@@ -6,9 +6,20 @@ import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Send } from "lucide-react";
+import { useChat } from "@ai-sdk/react";
 const ChatBot = () => {
   const [showChat, setShowChat] = useState(false);
   const time = new Date().toLocaleTimeString();
+  const {
+    messages,
+    input,
+    handleInputChange,
+    handleSubmit,
+    isLoading,
+    stop,
+    reload,
+    error,
+  } = useChat({ api: "/api/gemini" });
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement;
