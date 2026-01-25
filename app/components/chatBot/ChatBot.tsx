@@ -93,7 +93,19 @@ const ChatBot = () => {
               </div>
               {messages.length === 0 && (
                 <div>
-                  <p>Quick questions</p>
+                  <p className="mt-3 text-text-color font-medium mb-2">
+                    Quick questions
+                  </p>
+                  <div className="flex sm:items-center gap-2 flex-wrap flex-col sm:flex-row">
+                    {quickQuestions.map((question, idx) => (
+                      <div
+                        className="w-fit text-sm px-1.5 py-1 border cursor-pointer border-neutral-300 dark:border-neutral-300 rounded-md "
+                        key={idx}
+                      >
+                        {question}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
