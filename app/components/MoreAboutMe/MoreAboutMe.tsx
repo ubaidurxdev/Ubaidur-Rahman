@@ -9,19 +9,21 @@ import { MdAccessTime } from "react-icons/md";
 import { CgGenderMale } from "react-icons/cg";
 import { LuCodeXml } from "react-icons/lu";
 const MoreAboutMe = () => {
-  const [time, setTime] = useState("00:00:00");
+  const [time, setTime] = useState("00:00");
 
   useEffect(() => {
     const updateTime = () => {
       const bdTime = new Date().toLocaleTimeString("en-US", {
         timeZone: "Asia/Dhaka",
         hour12: false,
+        hour: "2-digit",
+        minute: "2-digit",
       });
       setTime(bdTime);
     };
 
     updateTime();
-    const interval = setInterval(updateTime, 1000);
+    const interval = setInterval(updateTime, 60000);
 
     return () => clearInterval(interval);
   }, []);
