@@ -26,7 +26,6 @@ const skills: Skill[] = [
   { name: "Tanstack Query", icon: <TanStack className="size-4 sm:size-5" /> },
   { name: "Redux", icon: <Redux className="size-4 sm:size-5" /> },
   { name: "Prisma", icon: <Prisma className="size-4 sm:size-5" /> },
-  { name: "Node.js", icon: <Nodejs className="size-4 sm:size-5" /> },
   { name: "Express.js", icon: <Expressjs className="size-4 sm:size-5" /> },
   { name: "MongoDB", icon: <MongoDB className="size-4 sm:size-5" /> },
   { name: "PostgreSQL", icon: <PostgreSQL className="size-4 sm:size-5" /> },
