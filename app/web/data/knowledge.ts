@@ -21,7 +21,7 @@ Goals:
 - Build production-ready full-stack applications
 
 Contact:
-- Email: (your email here)
-- GitHub: (your GitHub here)
-- LinkedIn: (your LinkedIn here)
+- Email: ubaidurrahman661@gmail.com
+- GitHub: https://github.com/ubaidurxdev
+- LinkedIn: https://www.linkedin.com/in/ubaidur-rahman01/
 `;
