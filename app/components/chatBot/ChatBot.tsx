@@ -24,6 +24,7 @@ export default function Chat() {
   const [input, setInput] = useState("");
   const [open, setOpen] = useState(false);
 
+
   const {
     messages,
     sendMessage,
@@ -62,7 +63,7 @@ export default function Chat() {
           parts: [
             {
               type: "text" as const,
-              text: "Hello! I'm your AI assistant. How can I help you today?",
+              text: "Hello! I'm Ubaidur's AI assistant. How can I help you today?",
             },
           ],
         },
@@ -84,6 +85,13 @@ export default function Chat() {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
   };
+
+  const quickQuestions = [
+    "How can I contact you?",
+    "What skills do you have?",
+    "What projects have you worked on recently",
+    "What is your biggest project?",
+  ];
 
   // Auto-scroll to bottom
   useEffect(() => {
