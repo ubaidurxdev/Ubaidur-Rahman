@@ -234,21 +234,25 @@ export default function Chat() {
                       </div>
                     );
                   })}
-                 <div>
-                  <p className="font-medium text-text-color mb-2 mt-4 text-sm">Quick questions</p>
-                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {messages.length === 1 &&
-                      quickQuestions.map((question, idx) => (
-                        <button
-                          key={idx}
-                          onClick={() => setInput(question)}
-                          className="text-left border border-gray-200 bg-white dark:bg-zinc-900 dark:border-zinc-800 px-3 py-2 rounded-lg text-xs hover:bg-gray-100 dark:hover:bg-zinc-800 transition shadow-sm"
-                        >
-                          {question}
-                        </button>
-                      ))}
-                  </div>
-                 </div>
+
+                  {messages.length === 1 && (
+                    <div>
+                      <p className="font-medium text-text-color mb-2 mt-4 text-sm">
+                        Quick questions
+                      </p>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {quickQuestions.map((question, idx) => (
+                          <button
+                            key={idx}
+                            onClick={() => setInput(question)}
+                            className="text-left border border-gray-200 bg-white dark:bg-zinc-900 dark:border-zinc-800 px-3 py-2 rounded-lg text-xs hover:bg-gray-100 dark:hover:bg-zinc-800 transition shadow-sm"
+                          >
+                            {question}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
 
                   {/* Loading */}
                   {isLoading && (

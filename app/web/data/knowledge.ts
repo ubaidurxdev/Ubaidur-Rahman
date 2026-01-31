@@ -10,7 +10,8 @@ Skills:
 - JavaScript, TypeScript
 - React, Next.js
 - Node.js, Express
-- MongoDB, Prisma
+- MongoDB, Prisma, Postgresql
+- Redux Toolkit
 - Tailwind CSS
 - Firebase, JWT, Stripe, Socket.io
 
