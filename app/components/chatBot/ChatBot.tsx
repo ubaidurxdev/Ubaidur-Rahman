@@ -18,6 +18,49 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
+import Link from "next/link";
+
+/** Parses text and renders markdown links [text](url) as clickable Link (internal) or <a> (external). */
+function renderMessageWithLinks(
+  text: string,
+  onInternalLinkClick?: () => void
+): React.ReactNode[] {
+  const markdownLinkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const parts: React.ReactNode[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  while ((match = markdownLinkRegex.exec(text)) !== null) {
+    parts.push(text.slice(lastIndex, match.index));
+    const label = match[1];
+    const href = match[2];
+    const isInternal = href.startsWith("/");
+    parts.push(
+      isInternal ? (
+        <Link
+          key={match.index}
+          href={href}
+          className="underline text-primary font-medium hover:opacity-80"
+          onClick={onInternalLinkClick}
+        >
+          {label}
+        </Link>
+      ) : (
+        <a
+          key={match.index}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline text-primary font-medium hover:opacity-80"
+        >
+          {label}
+        </a>
+      )
+    );
+    lastIndex = markdownLinkRegex.lastIndex;
+  }
+  parts.push(text.slice(lastIndex));
+  return parts;
+}
 
 export default function Chat() {
   const scrollAreaRef = useRef<HTMLDivElement>(null);
@@ -244,7 +287,14 @@ export default function Chat() {
                               <div className="whitespace-pre-wrap wrap-break-word leading-relaxed overflow-wrap-anywhere">
                                 {message.parts?.map((part, index) => {
                                   if (part.type === "text") {
-                                    return <p key={index}>{part.text}</p>;
+                                    return (
+                                      <p key={index}>
+                                        {renderMessageWithLinks(
+                                          part.text,
+                                          () => setOpen(false)
+                                        )}
+                                      </p>
+                                    );
                                   }
                                   return null;
                                 })}
