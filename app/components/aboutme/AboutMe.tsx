@@ -70,7 +70,7 @@ const AboutMe = () => {
             variants={itemVariants}
           >
             <Image
-              src={"/aboutme.jpg"}
+              src={"/ubaidur-about-me.jpeg"}
               alt="profile"
               fill
               blurDataURL="blur"
