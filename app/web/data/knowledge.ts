@@ -7,7 +7,7 @@ When answering "who is Ubaidur Rahman" or "tell me about Ubaidur" or "about you"
 Name: Md. Ubaidur Rahman
 Location: Bangladesh
 District : Sylhet
-Role: I’m a full-stack developer with experience across frontend, backend, and infrastructure. I work with React, Next.js, Node.js, Go, SQL/PostgreSQL, and also handle cloud and DevOps tools like AWS, Docker, and Nginx to build and deploy scalable applications
+Role: I’m a full-stack developer with experience across frontend, backend, and infrastructure. I work with React, Next.js, Node.js, Express.js, Go, SQL/PostgreSQL, and also handle cloud and DevOps tools like AWS, Docker, and Nginx to build and deploy scalable applications
 Education: Currently studying Inter Second Year (HSC), Science background
 Age: 18
 Experience: Though I do not yet have professional experience, I have completed multiple production-ready full-stack projects using modern technologies.
