@@ -278,7 +278,7 @@ export default function Chat() {
                           <div className="space-y-1 min-w-0 flex-1">
                             <div
                               className={cn(
-                                "rounded-lg px-4 py-2.5 text-sm max-w-full",
+                                "rounded-lg px-3 sm:px-4 sm:py-2.5 py-2 text-sm max-w-full",
                                 isUser
                                   ? "bg-primary text-primary-foreground"
                                   : "bg-muted",
@@ -293,6 +293,7 @@ export default function Chat() {
                                           part.text,
                                           () => setOpen(false)
                                         )}
+                                        
                                       </p>
                                     );
                                   }
