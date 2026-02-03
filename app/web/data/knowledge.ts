@@ -2,7 +2,7 @@ export const knowledgeBase = `
 ====================
 PERSONAL DETAILS (use ONLY when user asks "who is Ubaidur Rahman" or "tell me about Ubaidur" or similar identity/bio questions)
 ====================
-When answering "who is Ubaidur Rahman" or "tell me about Ubaidur" or "about you": give ONLY these details. Do NOT include projects, certifications, or contact in that answer.
+When answering "who is Ubaidur Rahman" or "tell me about Ubaidur" or "about you": give ONLY these details. Do NOT include projects, certifications,Currently learning , or contact in that answer.
 
 Name: Md. Ubaidur Rahman
 Location: Bangladesh

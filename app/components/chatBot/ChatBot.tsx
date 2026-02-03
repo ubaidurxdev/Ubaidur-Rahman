@@ -150,7 +150,7 @@ export default function Chat() {
   };
 
   const quickQuestions = [
-    "Who is Md. Ubaidur Rahman",
+    "Who is Md. Ubaidur Rahman?",
     "How can I contact you?",
     "What skills do you have?",
     "What is your biggest project?",
