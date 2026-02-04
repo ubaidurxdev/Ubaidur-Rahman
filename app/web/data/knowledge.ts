@@ -21,7 +21,7 @@ Skills:
 - MongoDB, Prisma, Postgresql, SQL
 - Redux Toolkit
 - Tailwind CSS
-- Firebase, JWT, Stripe, Socket.io, Tanstack Query
+- Firebase, JWT, Stripe , Tanstack Query
 
 Projects:
 
@@ -180,7 +180,7 @@ SITE LINKS (use markdown so user can click)
 - Projects section on homepage: [View my projects](/)#projects
 - Certificates / achievements section: [View certificates](/)#certificates
 
-When the user asks "how can I contact you" or "show contact" → use ONLY the contact markdown links above (Email, Phone, WhatsApp, GitHub, LinkedIn, Open Contact Page). No raw URLs.
+When the user asks "how can I contact you" or "show contact" → use ONLY the contact markdown links above (Phone, WhatsApp, GitHub, LinkedIn, Open Contact Page). No raw URLs.
 When the user asks "show me your projects" or "what projects" → give a short answer AND include: [View my projects](/)#projects
 When the user asks "achievements" or "certifications" or "certificates" → give a short answer, use [View certificates](/)#certificates, and for each certificate use the markdown link (e.g. [Programming Hero Certificate](/programminghero.pdf)). No raw URLs.
 
