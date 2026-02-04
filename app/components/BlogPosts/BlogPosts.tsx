@@ -18,15 +18,15 @@ const BlogPosts = ({ post, index }: { post: BlogPostMeta; index: number }) => {
       className="p-1 mt-5 rounded-md"
     >
       <Link href={`/blogs/${post.slug}`}>
-        <div className="flex sm:items-center flex-col mb-2 sm:flex-row gap-1 sm:justify-between">
+        <div className=" mb-2">
           <h4 className="sm:text-lg text-base sm:font-bold font-semibold">
             {post.title}
           </h4>
-          <p className="font-medium sm:text-base text-sm text-text-color">
+          <p className="font-medium sm:text-base mt-1 text-sm text-text-color">
             {post.date}
           </p>
         </div>
-        <p className="text-text-color mt-3 sm:text-base text-sm">
+        <p className="text-text-color mt-2 sm:text-base text-sm">
           {post.description}
         </p>
       </Link>
