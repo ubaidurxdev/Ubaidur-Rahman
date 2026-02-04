@@ -10,7 +10,7 @@ District : Sylhet
 Role: I’m a full-stack developer with experience across frontend, backend, and infrastructure. I work with React, Next.js, Node.js, Express.js, Go, SQL/PostgreSQL, and also handle cloud and DevOps tools like AWS, Docker, and Nginx to build and deploy scalable applications
 Education: Currently studying Inter Second Year (HSC), Science background
 Age: 18
-Experience: Though I do not yet have professional experience, I have completed multiple production-ready full-stack projects using modern technologies.
+Experience: Fresher, no professional experience yet.
 Goals : To become a senior software engineer and strong problem solver.
 Currently learning : AWS , Golang, Docker & Nginx
 
