@@ -3,7 +3,7 @@ import Title from "../shared/Title";
 import BlogPosts from "../BlogPosts/BlogPosts";
 import ButtonLink from "../shared/ButtonLink";
 export default function FeaturedBlogs() {
-  const blogs = getBlogs().slice(0, 3);
+  const blogs = getBlogs().slice(0, 4);
 
   return (
     <section className="mt-12">
