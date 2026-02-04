@@ -56,12 +56,9 @@ const OnThisPage = ({ htmlContent }: OnThisPageProps) => {
 
   return (
     <motion.aside
-      initial={{ opacity: 0, x: 30 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
-      className="fixed top-32 right-10 hidden lg:block w-56 rounded-xl border bg-background/70 backdrop-blur p-4 shadow-sm"
+      className="fixed top-32 right-10 hidden lg:block w-64 "
     >
-      <h2 className="text-sm font-semibold mb-3 text-muted-foreground">
+      <h2 className="text-sm font-semibold mb-3 ">
         On this page
       </h2>
 
@@ -94,7 +91,7 @@ const OnThisPage = ({ htmlContent }: OnThisPageProps) => {
                     e.preventDefault();
                     handleClick(heading.id);
                   }}
-                  whileHover={{ x: 4 }}
+                  whileHover={{ x: 2 }}
                   whileTap={{ scale: 0.97 }}
                   className={`block pl-4 text-sm leading-snug transition-colors ${
                     isActive
