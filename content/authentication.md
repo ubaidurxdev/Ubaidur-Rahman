@@ -388,7 +388,7 @@ Similar managed services include **Auth0, Supabase Auth, and Firebase Auth** - a
 
 ---
 
-## Final Thoughts
+## 8. Final Thoughts
 
 The evolution of authentication mirrors the evolution of web development itself:
 - From **simple, stateful servers** (Sessions)

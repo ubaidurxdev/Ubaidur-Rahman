@@ -12,11 +12,11 @@ In today’s professional world, success is not only about skills or education; 
 
 In this blog, I will explain what personal networking actually is and why it plays a crucial role in career growth. It is not only for students and developers but also for professionals, especially those in the IT sector.
 
-## What Is Networking?
+## 1. What Is Networking?
 
 Networking means building and maintaining relationships with people who can support, guide, or collaborate with you professionally . It is not about asking for favors. It is about: **`Sharing knowledge`** , **`Learning from others`** , **`Supporting each other`** , **`Creating long-term professional relationships`**. Networking can happen both online and offline. For now, I will explain effective ways to connect with professionals online.
 
-## Why Is Networking Important?
+## 2. Why Is Networking Important?
 
 The importance of networking is greater than many people realize. Without it, personal and professional growth becomes difficult, no matter how talented or hardworking you are. Networking helps you gain knowledge, discover opportunities, and build meaningful relationships. In today’s connected world, success is rarely achieved alone—strong networks make the difference.
 
@@ -30,7 +30,7 @@ There are many reasons to network with professionals, such as:
 
 These are the core reasons for networking with professionals, and there are still many more reasons that I haven’t discussed here.
 
-## Types of Networking
+## 3. Types of Networking
 
 There are 2 types of networking. One is professional networking and the other one is personal networking. Such as :
 
@@ -38,11 +38,11 @@ There are 2 types of networking. One is professional networking and the other on
 
 - **Personal networking** : Personal networking means building relationships with friends, classmates, teachers, and seniors. After building these relationships, you can gain support, advice, new perspectives, and opportunities that help you grow both personally and professionally.
 
-## Why Networking Is Important for Developers
+## 4. Why Networking Is Important for Developers
 
 For developers, networking helps in many ways. Such as: `Learning new technologies`, `Discovering job openings`, `Collaborating on projects` and `Getting feedback on work`. Many developers get their first job through connections, not applications. So connecting with professionals is essential for developers.
 
-## How to Start Networking as a Beginner
+## 5. How to Start Networking as a Beginner
 
 To connect with professionals, you need to follow these steps. Networking can feel boring at first, but starting small and being consistent can make a big difference. By taking these initial steps, you’ll gradually build meaningful connections that can support your career growth and open new opportunities.
 
@@ -62,13 +62,13 @@ To connect with professionals, you need to follow these steps. Networking can fe
   - Help beginners
   - Appreciate others work
 
-## Common Networking Mistakes to Avoid
+## 6. Common Networking Mistakes to Avoid
 
 - Asking for jobs immediately
 - Being inactive after connecting
 - Only networking when you need help
 - Not following up
 
-## Conclusion
+## 7. Conclusion
 
 Networking is about building genuine relationships, not collecting contacts. Skills are important, but networking helps your skills reach the right opportunities. By connecting with people, learning from them, and supporting others, you create long-term career growth.
