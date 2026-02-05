@@ -1,13 +1,11 @@
 ---
 title: "JWT vs Session vs Clerk: Understanding Authentication in Modern Web Apps"
 description: "A comprehensive deep dive into JWT, Session-based, and Clerk authentication strategies, their architectural differences, implementation nuances, security implications, appropriate use-cases, and industry best practices."
-date: "2026-02-04"
+date: February 4, 2025
 author: "Ubaidur Rahman"
 slug: authentication
 tags: ["Authentication", "Authorization", "JWT", "Session", "Clerk", "Web Development", "Security", "MERN", "SPA", "Next.js", "Node.js"]
-category: "Web Security"
 coverImage: "/images/auth-comparison-cover.jpg"
-readingTime: "12 min"
 ---
 
 # JWT vs Session vs Clerk: Understanding Authentication in Modern Web Apps
