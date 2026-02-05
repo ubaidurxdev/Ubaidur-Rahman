@@ -5,8 +5,8 @@ import Navbar from "./components/Navbar/Navbar";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import Footer from "./components/Footer/Footer";
 import KeyboardNavigation from "./components/keyboardNavigation/KeyboardNavigation";
-import ChatBot from "./components/chatBot/ChatBot";
-import { Toaster } from 'react-hot-toast';
+import { Toaster } from "react-hot-toast";
+import ChatBotController from "./config/ChatBotController";
 const hankenGrotesk = Hanken_Grotesk({
   subsets: ["latin"],
 });
@@ -41,12 +41,12 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <ChatBot />
+          <ChatBotController />
           <KeyboardNavigation />
           <main className="grow max-w-[720px] w-full mt-14 mx-auto px-3 sm:px-0">
             {children}
           </main>
-          <Toaster/>
+          <Toaster />
           <Footer />
         </ThemeProvider>
       </body>
