@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -15,14 +14,16 @@ type OnThisPageProps = {
 
 const OnThisPage = ({ htmlContent }: OnThisPageProps) => {
   const [headings, setHeadings] = useState<HeadingItem[]>([]);
-  const [activeId, setActiveId] = useState<string>("");
+  const [activeId, setActiveId] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
 
+  /* ---------- Parse headings ---------- */
   useEffect(() => {
     const tempDiv = document.createElement("div");
     tempDiv.innerHTML = htmlContent;
 
     const h2Elements = tempDiv.querySelectorAll("h2");
-    const h2Data: HeadingItem[] = Array.from(h2Elements).map((h2) => ({
+    const h2Data = Array.from(h2Elements).map((h2) => ({
       text: h2.textContent ?? "",
       id: h2.id,
     }));
@@ -31,6 +32,7 @@ const OnThisPage = ({ htmlContent }: OnThisPageProps) => {
     if (h2Data.length) setActiveId(h2Data[0].id);
   }, [htmlContent]);
 
+  /* ---------- Active heading observer ---------- */
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -38,7 +40,7 @@ const OnThisPage = ({ htmlContent }: OnThisPageProps) => {
           if (entry.isIntersecting) setActiveId(entry.target.id);
         });
       },
-      { rootMargin: "-45% 0px -45% 0px" }
+      { rootMargin: "-45% 0px -45% 0px" },
     );
 
     headings.forEach((h) => {
@@ -52,63 +54,73 @@ const OnThisPage = ({ htmlContent }: OnThisPageProps) => {
   const handleClick = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setActiveId(id);
+    setIsOpen(false);
   };
 
+  const visibleHeadings = isOpen
+    ? headings
+    : headings.filter((h) => h.id === activeId);
+
   return (
-    <motion.aside
-      className="fixed top-32 right-10 hidden lg:block w-64 "
-    >
-      <h2 className="text-sm font-semibold mb-3 ">
-        On this page
-      </h2>
+    <>
+      {/* ---------- Backdrop ---------- */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="fixed inset-0 z-40 bg-black/50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsOpen(false)}
+          />
+        )}
+      </AnimatePresence>
 
-      <ul className="space-y-1.5 relative">
-        <AnimatePresence>
-          {headings.map((heading) => {
-            const isActive = activeId === heading.id;
+      {/* ---------- Floating Button / Modal ---------- */}
+      <motion.aside className="fixed bottom-8 left-1/2 z-50 -translate-x-1/2 w-80 sm:w-96">
+        <motion.div
+          layout
+          onClick={() => setIsOpen((p) => !p)}
+          className="cursor-pointer rounded-md border bg-black dark:bg-neutral-900 shadow-xl p-3"
+        >
+          <motion.ul layout className="relative space-y-2">
+            <AnimatePresence mode="popLayout" initial={false}>
+              {visibleHeadings.map((heading) => {
+                const isActive = activeId === heading.id;
 
-            return (
-              <motion.li
-                key={heading.id}
-                layout
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
-                className="relative"
-              >
-                {isActive && (
-                  <motion.span
-                    layoutId="active-indicator"
-                    className="absolute left-0 top-1/2 -translate-y-1/2 h-5 w-1 rounded-full bg-primary"
-                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                  />
-                )}
-
-                <motion.a
-                  href={`#${heading.id}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleClick(heading.id);
-                  }}
-                  whileHover={{ x: 2 }}
-                  whileTap={{ scale: 0.97 }}
-                  className={`block pl-4 text-sm leading-snug transition-colors ${
-                    isActive
-                      ? "text-foreground font-medium"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  {heading.text}
-                </motion.a>
-              </motion.li>
-            );
-          })}
-        </AnimatePresence>
-      </ul>
-    </motion.aside>
+                return (
+                  <motion.li
+                    key={heading.id}
+                    layout
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
+                    className="relative"
+                  >
+                    <a
+                      href={`#${heading.id}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleClick(heading.id);
+                      }}
+                      className={`block text-xs sm:text-sm leading-snug transition-colors ${
+                        isActive
+                          ? "text-white font-medium"
+                          : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      {heading.text}
+                    </a>
+                  </motion.li>
+                );
+              })}
+            </AnimatePresence>
+          </motion.ul>
+        </motion.div>
+      </motion.aside>
+    </>
   );
 };
 
 export default OnThisPage;
-
