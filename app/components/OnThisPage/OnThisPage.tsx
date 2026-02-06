@@ -81,7 +81,7 @@ const OnThisPage = ({ htmlContent }: OnThisPageProps) => {
         <motion.div
           layout
           onClick={() => setIsOpen((p) => !p)}
-          className="cursor-pointer rounded-md border bg-black dark:bg-neutral-900 shadow-xl p-3"
+          className={`cursor-pointer ${isOpen ? "rounded-md" : "rounded-full"} bg-black dark:bg-neutral-900 shadow-3xl p-3`}
         >
           <motion.ul layout className="relative space-y-2">
             <AnimatePresence mode="popLayout" initial={false}>
@@ -104,10 +104,8 @@ const OnThisPage = ({ htmlContent }: OnThisPageProps) => {
                         e.preventDefault();
                         handleClick(heading.id);
                       }}
-                      className={`block text-xs sm:text-sm leading-snug transition-colors ${
-                        isActive
-                          ? "text-white font-medium"
-                          : "text-muted-foreground hover:text-foreground"
+                      className={`block text-xs  sm:text-sm leading-snug transition-colors ${
+                        isActive ? "text-white font-medium" : "text-gray-400 hover:text-gray-300"
                       }`}
                     >
                       {heading.text}
