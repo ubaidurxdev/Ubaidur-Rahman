@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -81,7 +80,7 @@ const OnThisPage = ({ htmlContent }: OnThisPageProps) => {
           layout
           className={`bg-black dark:bg-neutral-900 shadow-3xl ${isOpen ? "rounded-md" : "rounded-full"} overflow-hidden`}
         >
-          <motion.ul layout className="relative">
+          <motion.ul layout className="relative p-2">
             <AnimatePresence mode="popLayout" initial={false}>
               {/* ---------- OPEN: full list ---------- */}
               {isOpen &&
@@ -96,11 +95,11 @@ const OnThisPage = ({ htmlContent }: OnThisPageProps) => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -6 }}
                       transition={{ duration: 0.2, ease: "easeOut" }}
-                      className="p-2"
+                      className=""
                     >
                       <button
                         onClick={() => handleNavigate(heading.id)}
-                        className={`block w-full text-left text-xs sm:text-sm p-2 rounded-md leading-snug transition-colors ${
+                        className={`block w-full text-left text-xs sm:text-sm p-2 mt-1 rounded-md leading-snug transition-colors ${
                           isActive
                             ? "text-white font-medium bg-neutral-800"
                             : "text-gray-400 hover:text-gray-300"
@@ -117,11 +116,20 @@ const OnThisPage = ({ htmlContent }: OnThisPageProps) => {
             {activeHeading && (
               <li
                 onClick={() => setIsOpen(true)}
-                className="border-t border-white/10 px-3 py-2 cursor-pointer bg-black dark:bg-neutral-900"
+                className="border-t border-gray-600 px-3 py-2 cursor-pointer overflow-hidden"
               >
-                <p className="text-xs sm:text-sm font-medium text-white">
-                  {activeHeading.text}
-                </p>
+                <AnimatePresence mode="wait" initial={false}>
+                  <motion.p
+                    key={activeHeading.id}
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.18, ease: "easeOut" }}
+                    className="text-xs sm:text-sm font-medium text-white"
+                  >
+                    {activeHeading.text}
+                  </motion.p>
+                </AnimatePresence>
               </li>
             )}
           </motion.ul>
