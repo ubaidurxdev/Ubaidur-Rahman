@@ -65,7 +65,7 @@ const OnThisPage = ({ htmlContent }: OnThisPageProps) => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 z-40 bg-black/50"
+            className="fixed inset-0 z-40 bg-black/50 backdrop-blur-[2px]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -116,7 +116,7 @@ const OnThisPage = ({ htmlContent }: OnThisPageProps) => {
             {activeHeading && (
               <li
                 onClick={() => setIsOpen(true)}
-                className={`${isOpen && "border-t border-gray-600"} p-2 cursor-pointer overflow-hidden`}
+                className={`${isOpen && "border-t border-gray-600"} p-2 mt-2 cursor-pointer overflow-hidden`}
               >
                 <AnimatePresence mode="wait" initial={false}>
                   <motion.p
