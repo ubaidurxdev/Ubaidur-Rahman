@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -51,15 +52,13 @@ const OnThisPage = ({ htmlContent }: OnThisPageProps) => {
     return () => observer.disconnect();
   }, [headings]);
 
-  const handleClick = (id: string) => {
+  const handleNavigate = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setActiveId(id);
     setIsOpen(false);
   };
 
-  const visibleHeadings = isOpen
-    ? headings
-    : headings.filter((h) => h.id === activeId);
+  const activeHeading = headings.find((h) => h.id === activeId);
 
   return (
     <>
@@ -76,44 +75,55 @@ const OnThisPage = ({ htmlContent }: OnThisPageProps) => {
         )}
       </AnimatePresence>
 
-      {/* ---------- Floating Button / Modal ---------- */}
+      {/* ---------- Floating Panel ---------- */}
       <motion.aside className="fixed bottom-8 left-1/2 z-50 -translate-x-1/2 w-80 sm:w-96">
         <motion.div
           layout
-          onClick={() => setIsOpen((p) => !p)}
-          className={`cursor-pointer ${isOpen ? "rounded-md" : "rounded-full"} bg-black dark:bg-neutral-900 shadow-3xl p-3`}
+          className={`bg-black dark:bg-neutral-900 shadow-3xl ${isOpen ? "rounded-md" : "rounded-full"} overflow-hidden`}
         >
-          <motion.ul layout className="relative space-y-2">
+          <motion.ul layout className="relative">
             <AnimatePresence mode="popLayout" initial={false}>
-              {visibleHeadings.map((heading) => {
-                const isActive = activeId === heading.id;
+              {/* ---------- OPEN: full list ---------- */}
+              {isOpen &&
+                headings.map((heading) => {
+                  const isActive = activeId === heading.id;
 
-                return (
-                  <motion.li
-                    key={heading.id}
-                    layout
-                    initial={{ opacity: 0, y: 6 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -6 }}
-                    transition={{ duration: 0.2, ease: "easeOut" }}
-                    className="relative"
-                  >
-                    <a
-                      href={`#${heading.id}`}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleClick(heading.id);
-                      }}
-                      className={`block text-xs  sm:text-sm leading-snug transition-colors ${
-                        isActive ? "text-white font-medium" : "text-gray-400 hover:text-gray-300"
-                      }`}
+                  return (
+                    <motion.li
+                      key={heading.id}
+                      layout
+                      initial={{ opacity: 0, y: 6 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -6 }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
+                      className="p-2"
                     >
-                      {heading.text}
-                    </a>
-                  </motion.li>
-                );
-              })}
+                      <button
+                        onClick={() => handleNavigate(heading.id)}
+                        className={`block w-full text-left text-xs sm:text-sm p-2 rounded-md leading-snug transition-colors ${
+                          isActive
+                            ? "text-white font-medium bg-neutral-800"
+                            : "text-gray-400 hover:text-gray-300"
+                        }`}
+                      >
+                        {heading.text}
+                      </button>
+                    </motion.li>
+                  );
+                })}
             </AnimatePresence>
+
+            {/* ---------- ACTIVE (always visible, border-top, clickable) ---------- */}
+            {activeHeading && (
+              <li
+                onClick={() => setIsOpen(true)}
+                className="border-t border-white/10 px-3 py-2 cursor-pointer bg-black dark:bg-neutral-900"
+              >
+                <p className="text-xs sm:text-sm font-medium text-white">
+                  {activeHeading.text}
+                </p>
+              </li>
+            )}
           </motion.ul>
         </motion.div>
       </motion.aside>
