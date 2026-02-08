@@ -116,7 +116,7 @@ const OnThisPage = ({ htmlContent }: OnThisPageProps) => {
             {activeHeading && (
               <li
                 onClick={() => setIsOpen(true)}
-                className={`${isOpen && "border-t border-gray-600"} p-2 mt-2 cursor-pointer overflow-hidden`}
+                className={`${isOpen && "border-t border-gray-600 mt-2"} p-2  cursor-pointer overflow-hidden`}
               >
                 <AnimatePresence mode="wait" initial={false}>
                   <motion.p
